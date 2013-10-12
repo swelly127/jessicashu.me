@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div.container
+    h1= title
+    p #{user} is using #{title}.
+    p #{user} just made her first site!
+    p= line_var
+      form.form-inline(method="post", action="/add")
+        input.input-xxlarge(type="text", placeholder="Type title here", name="title")
+        input.input-xxlarge(type="text", placeholder="Type content here", name="content")
+        button.btn(type="submit") Go!
