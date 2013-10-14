@@ -16,7 +16,8 @@ var msgSchema = new Schema({
 });
 
 var Message = mongoose.model("Message", msgSchema)
-mongoose.connect("mongodb://localhost/test");
+var uri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/test"
+mongoose.connect(uri);
 
 /*
 DATABASE EXAMPLES
