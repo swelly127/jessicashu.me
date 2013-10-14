@@ -1,10 +1,53 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/test");
+var Schema = mongoose.Schema;
 
-var postSchema = new mongoose.Schema({
+var postSchema = new Schema({
 	title: String,
 	content: String,
 	date: Date
 });
 
 var Post = mongoose.model("Post", postSchema)
+
+var msgSchema = new Schema({
+	name: String,
+	email: String,
+	content: String
+});
+
+var Message = mongoose.model("Message", msgSchema)
+mongoose.connect("mongodb://localhost/test");
+
+/*
+DATABASE EXAMPLES
+var Task = new Schema({
+	content : {
+		type: String,
+		unique: true
+	},
+	done: Boolean,
+	user: {
+		type: Schema.ObjectId,
+		ref: 'user'
+	},
+	date : Date
+});
+
+var User = new Schema({
+	username: {
+		type: String,
+		unique: true
+	},
+	password: String,
+	tasks: [Task]
+
+var Cookie = new Schema({
+	username: String,
+	password: String
+});
+});
+
+mongoose.model('Task', Task);
+mongoose.model('User', User);
+mongoose.model('Cookie', Cookie);
+*/

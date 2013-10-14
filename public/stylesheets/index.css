@@ -1,0 +1,14 @@
+
+div.container {
+	overflow: auto;
+	display: block;
+}
+h2.left {
+	display: block;
+	width: 300px;
+	float: left;
+}
+.container #container-left {
+	width: 500px;
+	float: left;
+}

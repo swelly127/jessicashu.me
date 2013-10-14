@@ -1,0 +1,96 @@
+#resume {
+  overflow: auto;
+  margin-left: 45px;
+}
+
+.download {
+  margin-left: 45px;
+}
+
+strong.skill-cat {
+	font-style: oblique;
+	font-size: 16px;
+}
+
+ul.awards {
+	margin-left: 5px;
+}
+
+ul.awards li {
+	font-weight: 300;
+	font-size: 17px;
+	color: Black;
+}
+
+ul.awards li div {
+	font-size: 15px;
+	color: maroon;
+}
+
+.download a {
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  background-color: grey;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.download a:hover {
+  background: blue;
+}
+.download i {
+  margin-right: 10px;
+}
+#resume h2 {
+	color: maroon;
+}
+#resume h3 {
+  font-weight: 300;
+}
+#resume h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+}
+#resume h5 {
+  margin: 3px 0px 0px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 300;
+}
+#resume p strong {
+  color: @accent;
+  font-weight: 400;
+}
+#resume #resume-left {
+  float: left;
+  width: 450px;
+}
+#resume #resume-right {
+  float: left;
+  width: 420px;
+}
+#courses_link {
+  color: @accent !important;
+}
+#courses {
+  position: absolute;
+  display: none;
+  z-index: 1000;
+  background: @accent;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #FFF;
+  width: 300px;
+}
+#courses ul,
+#courses li {
+  margin: 10px 5px;
+  padding: 0;
+  list-style-type: none;
+}

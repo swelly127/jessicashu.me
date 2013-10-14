@@ -8,6 +8,7 @@ var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
 var http = require('http');
+var mongoose = require('mongoose');
 var path = require('path');
 
 var app = express();
@@ -23,15 +24,20 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
 app.get('/', routes.index);
+app.get('/contact', routes.contact)
+app.get('/blog', routes.blog)
+app.get('/resume', routes.resume)
 app.get('/users', user.list);
 app.post('/add', routes.add);
+app.post('/message', routes.addmsg);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });

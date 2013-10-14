@@ -1,0 +1,9 @@
+extends layout
+block css
+  link(rel='stylesheet', href='/stylesheets/blog.css')
+block content
+  div.container
+    - for (var x = 0; x < text_blob.length; x++)
+      h2.title= text_blob[x].title.trim()
+      p.date= text_blob[x].date
+      p.content= text_blob[x].content.trim()

@@ -1,12 +1,37 @@
 extends layout
 
+block css
+  link(rel='stylesheet', href='/stylesheets/index.css')
 block content
   div.container
-    h1= title
-    p #{user} is using #{title}.
-    p #{user} just made her first site!
-    p= line_var
-      form.form-inline(method="post", action="/add")
-        input.input-xxlarge(type="text", placeholder="Type title here", name="title")
-        input.input-xxlarge(type="text", placeholder="Type content here", name="content")
-        button.btn(type="submit") Go!
+    h2 about me
+    #container-left
+      #short-bio-container
+        img(src="images/jessica.jpg", style="float:left; margin-right:20px;", width='100px', height="100px;")
+        h3.short-bio short version
+        div(style="width=250px;")
+          | I am a college sophomore studying computer science and business. I love to meet new people,
+          | eat sushi, and attend hackathons. My favorite ice cream flavor is mint chocolate chip. Coconut
+          | is a close second.
+      h3.long-bio long version
+      div
+      | I am a Texas native but spent most of my early childhood in China.
+      | When I was five, I moved to Vancouver BC, where I did little kid things - such as read math books
+      | and get expelled from kindergarten. I went to middle and high school in San Francisco, and now attend
+      | college in New York where I study computer science.
+      br
+      br
+      | I'm the proud owner of a very smart toy poodle named yoshi.
+      br
+      br
+      | My goals in life are to be happy, have a challenging and enjoyable career
+      | in technology, and surrounding myself with smart and passionate people.
+      | I also hope to one day eat at Jiro's sushi resturant in Tokyo.
+      br
+      br
+      | In my spare time, I like to browse reddit while eating cheetos. In my more productive spare
+      | time, I play volleyball, read the news or try out new resturants. You can learn more about me
+      | by contacting me here or finding me on facebook.
+      br
+      br
+    img.left(href="/images/puppy.png")

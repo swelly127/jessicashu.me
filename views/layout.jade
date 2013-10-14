@@ -1,7 +1,26 @@
 doctype 5
+<!-- Welcome to my source code! -->
 html
   head
     title= title
+    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css")
     link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/header.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block css
   body
+    #navbar
+      ul
+        li
+         a(href="/") home
+        li
+         a(href="/resume") resume
+        li
+         a(href="/blog") blogposts
+        li
+         a(href="/contact") contactme
     block content
+    #footer(style="display: block; text-align: center")
+      |Created by
+      a(href="https://facebook.com/swelly127/", target="_blank")  Jessica Shu
+      |  on October 14, 2013
