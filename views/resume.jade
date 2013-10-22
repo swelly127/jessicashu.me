@@ -2,11 +2,11 @@ extends layout
 block css
   link(rel='stylesheet', href='/stylesheets/resume.css')
 block content
-  .download
-    a(href='images/oct_2013.pdf')
-      i.icon-download-alt.icon-large
-      | Download PDF
   #resume
+    .download
+      a(href='images/oct_2013.pdf')
+        i.icon-download-alt.icon-large
+        | Download PDF
     #resume-left
       h2 Work Experience
       h3 Yorango.com - Ithaca, NY
@@ -32,7 +32,6 @@ block content
       div Ruby on Rails, IOS (beginner), Node.js
       strong.skill-cat Applications
       div Github, Xcode, Sublime, Amazon Web Services, Heroku
-
     #resume-right
       h2 Education
       h3 Cornell University
@@ -68,6 +67,7 @@ block content
         li MathCounts 2008
           div → 1st place Regional Winner SF Bay Area
           div → Top Ten Statewide (CA)
+      .ref References provided upon request
 
 
 

@@ -1,12 +1,24 @@
+.ref {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: left;
+  margin-left: 125px;
+  font-size: 15px;
+  color: blue;
+  font-style: oblique;
+  font-weight: 400;
+}
 #resume {
   overflow: auto;
   float: center;
   width: 100%;
   margin-left: 45px;
+  margin-bottom: 20px;
 }
 
 .download {
-  margin-left: 45px;
+  margin-top: 0px;
+  margin-left: 0px;
 }
 
 strong.skill-cat {
@@ -70,12 +82,12 @@ ul.awards li div {
 #resume #resume-left {
   overflow: auto;
   float: left;
-  width: 450px;
+  width: 50%;
 }
 #resume #resume-right {
   overflow: auto;
   float: left;
-  width: 420px;
+  width: 50%px;
 }
 #courses_link {
   color: @accent !important;
