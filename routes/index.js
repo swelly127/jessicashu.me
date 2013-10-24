@@ -41,24 +41,55 @@ exports.resume = function(req, res){
   });
 };
 
+exports.plz_stop = function(req, res){
+  res.render('plz_stop', {
+    title: "Hey you"
+  });
+};
+
+exports.new_post = function(req, res){
+  res.render('new_post', {
+    title: "New"
+  });
+};
+
+exports.messages = function(req, res){
+  Message.find().sort({date: -1}).exec(function(err, message){
+    if (message && message[0]){
+      res.render('messages', {
+        title: "Inbox",
+        messages: message
+      });
+    }
+    else {
+      res.redirect('/');
+    };
+  });
+};
+
 exports.add = function(req, res){
-	var temp = new Post({
-		title: req.body.title,
-		content: req.body.content,
-		date: Date.now()
-	}).save(function(){
-		console.log("post saved!");
-		res.redirect('/');
-	});
+  if (req.body.password.trim() == "sushi4ever"){
+    var temp = new Post({
+      title: req.body.title,
+      content: req.body.content,
+      date: Date.now()
+    }).save(function(){
+      console.log("post saved!");
+      res.redirect('/blog');
+    });
+  } else {
+      res.redirect('/plz_stop');
+  }
 };
 
 exports.addmsg = function(req, res){
   var temp = new Message({
     name: req.body.name,
     email: req.body.email,
-    content: req.body.message
+    content: req.body.message,
+    date: Date.now()
   }).save(function(){
-    console.log("post saved!");
+    console.log("message saved!");
     res.redirect('/contact');
   });
 };

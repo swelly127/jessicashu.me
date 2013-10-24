@@ -1,0 +1,12 @@
+extends layout
+block css
+  link(rel='stylesheet', href='/stylesheets/blog.css')
+block content
+  div.container
+    br
+    h1(style="color:darkBlue") New post:
+    form.form-inline(method="post", action="/add")
+      input.input-xxlarge(type="text", placeholder="title", name="title", display="")
+      textarea.input-xxlarge(type="text", rows=7, placeholder="content", style="margin: 10px 0px;", name="content")
+      input.input-xxlarge(type="text", placeholder="password", name="password", display="")
+      button.btn(style="margin-top:10px; display:block;", type="submit") submit

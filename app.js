@@ -35,8 +35,11 @@ app.get('/contact', routes.contact)
 app.get('/blog', routes.blog)
 app.get('/resume', routes.resume)
 app.get('/users', user.list);
+app.get('/messages', routes.messages)
+app.get('/new_post', routes.new_post)
+app.get('/plz_stop', routes.plz_stop)
 app.post('/add', routes.add);
-app.post('/message', routes.addmsg);
+app.post('/addmsg', routes.addmsg);
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);

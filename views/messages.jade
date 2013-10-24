@@ -1,0 +1,9 @@
+extends layout
+block css
+  link(rel='stylesheet', href='/stylesheets/messages.css')
+block content
+  - for (var x = 0; x < messages.length; x++)
+    div.container
+      h2.msg= messages[x].content.trim()
+        p.date #{messages[x].date}
+      div.name #{messages[x].name.toUpperCase()} - #{messages[x].email.trim().toUpperCase()}

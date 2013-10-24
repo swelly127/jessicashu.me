@@ -7,14 +7,14 @@ var postSchema = new Schema({
 	date: Date
 });
 
-var Post = mongoose.model("Post", postSchema)
-
 var msgSchema = new Schema({
 	name: String,
 	email: String,
-	content: String
+	content: String,
+	date: Date
 });
 
+var Post = mongoose.model("Post", postSchema)
 var Message = mongoose.model("Message", msgSchema)
 var uri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb://localhost/test"
 mongoose.connect(uri);
