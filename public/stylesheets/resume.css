@@ -11,7 +11,7 @@
 #resume {
   overflow: auto;
   float: center;
-  width: 100%;
+  width: 850px;
   margin-left: 45px;
   margin-bottom: 20px;
 }
@@ -82,12 +82,13 @@ ul.awards li div {
 #resume #resume-left {
   overflow: auto;
   float: left;
-  width: 50%;
+  width: 420px;
 }
 #resume #resume-right {
   overflow: auto;
   float: left;
-  width: 50%px;
+  margin-right: 0px;
+  width: 420px;
 }
 #courses_link {
   color: @accent !important;

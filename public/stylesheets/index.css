@@ -2,6 +2,7 @@
 div.container {
 	overflow: auto;
 	display: block;
+	margin-left: 25px;
 }
 h2.left {
 	display: block;
