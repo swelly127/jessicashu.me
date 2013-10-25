@@ -10,7 +10,6 @@ var user = require('./routes/user');
 var http = require('http');
 var mongoose = require('mongoose');
 var path = require('path');
-
 var app = express();
 
 // all environments
@@ -39,7 +38,7 @@ app.get('/messages', routes.messages)
 app.get('/new_post', routes.new_post)
 app.get('/plz_stop', routes.plz_stop)
 app.post('/add', routes.add);
-app.post('/addmsg', routes.addmsg);
+app.post('/contact', routes.addmsg);
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);

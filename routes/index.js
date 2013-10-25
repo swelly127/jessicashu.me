@@ -31,7 +31,7 @@ exports.blog = function(req, res){
 exports.contact = function(req, res){
   res.render('contact', {
   	title: "Contact Me",
-    user: "Jessica Shu",
+    user: "Jessica Shu"
   });
 };
 
@@ -84,13 +84,21 @@ exports.add = function(req, res){
 
 exports.addmsg = function(req, res){
   var temp = new Message({
-    name: req.body.name,
-    email: req.body.email,
-    content: req.body.message,
+    name: req.body.name.trim(),
+    email: req.body.email.trim(),
+    content: req.body.message.trim(),
     date: Date.now()
   }).save(function(){
     console.log("message saved!");
-    res.redirect('/contact');
+    s = req.body.name != "" && req.body.message != "" && req.body.email.indexOf("@") != -1
+    res.render('contact', {
+      title: "Contact Me",
+      name: req.body.name,
+      email: req.body.email,
+      msg: req.body.message,
+      email_sym: req.body.email.indexOf("@"),
+      success: s
+    });
   });
 };
 

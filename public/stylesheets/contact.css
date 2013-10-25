@@ -45,13 +45,21 @@ img {
 }
 
 #contact_box .error {
-    clear: none !important;
-    color: #D00;
+  clear: none !important;
+  color: #D00;
 }
 
-#success {
-    width: 400px;
-    font-family: "Satisfy";
-    font-size: 36px;
-    color: @accent;
+#contact_box #contact_right .success div {
+  margin-top: 30px;
+  width: 300px;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+#contact_box #contact_right .success p {
+  font: 400 30px/1.2 'Merienda One', Helvetica, sans-serif;
+  color: rgba(0,0,0,0.7);
+  text-shadow: 3px 3px 3px #fff;
+  margin-bottom: 10px;
 }
