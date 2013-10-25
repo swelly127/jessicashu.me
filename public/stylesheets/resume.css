@@ -1,24 +1,23 @@
 .ref {
+  margin-top: 20px;
   margin-bottom: 20px;
-  margin-top: 10px;
-  text-align: left;
-  margin-left: 125px;
   font-size: 15px;
-  color: blue;
   font-style: oblique;
   font-weight: 400;
 }
-#resume {
-  overflow: auto;
-  float: center;
-  width: 850px;
-  margin-left: 45px;
-  margin-bottom: 20px;
+.hack {
+  margin-top: 15px;
+  margin-left: 50%;
 }
-
-.download {
-  margin-top: 0px;
-  margin-left: 0px;
+#resume {
+  text-align: center;
+  overflow: auto;
+  width: 880px;
+  margin-left: -440px;
+  float: center;
+  border: 3px solid;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 strong.skill-cat {
@@ -39,6 +38,21 @@ ul.awards li {
 ul.awards li div {
 	font-size: 15px;
 	color: maroon;
+}
+
+#res_header {
+  font-family: Courier;
+  text-align: center;
+}
+.info {
+  margin-top: -12px;
+  margin-bottom: 10px;
+  font-family: Courier;
+}
+.download {
+  display: none;
+  margin-left: -440px;
+  margin-bottom: 20px;
 }
 
 .download a {
@@ -81,33 +95,36 @@ ul.awards li div {
 }
 #resume #resume-left {
   overflow: auto;
+  margin-left: 10px;
   float: left;
+  margin-right: 20px;
   width: 420px;
 }
 #resume #resume-right {
   overflow: auto;
   float: left;
-  margin-right: 0px;
   width: 420px;
 }
-#courses_link {
-  color: @accent !important;
+.sub {
+  border: 1px dotted;
+  border-radius: 10px;
 }
-#courses {
-  position: absolute;
-  display: none;
-  z-index: 1000;
-  background: @accent;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  font-size: 14px;
-  color: #FFF;
-  width: 300px;
+#work_exp {
+  background-color: rgb(200,200,255);
+  margin-bottom: 15px;
 }
-#courses ul,
-#courses li {
-  margin: 10px 5px;
-  padding: 0;
+
+#skills {
+  background-color: rgb(255,255,200);
+}
+#edu {
+  background-color: rgb(255,200,200);
+  margin-bottom: 15px;
+}
+#prize {
+  background-color: rgb(200,255,200);
+}
+
+ul li {
   list-style-type: none;
 }

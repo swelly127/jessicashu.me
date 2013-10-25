@@ -2,73 +2,80 @@ extends layout
 block css
   link(rel='stylesheet', href='/stylesheets/resume.css')
 block content
-  #resume
+  .hack
     .download
       a(href='images/oct_2013.pdf')
         i.icon-download-alt.icon-large
         | Download PDF
-    #resume-left
-      h2 Work Experience
-      h3 Yorango.com - Ithaca, NY
-      h4 Lead of Mobile Development
-      h5 Feb 2013 - Present
-      ul
-        li Main advocate of stronger mobile presence for Yorango
-        li Planned mobile milestones and created first prototypes
-        li Product management + IOS development
-      h3 Inigral - San Francisco, CA
-      h4 Ruby on Rails Developer - Intern
-      h5 May 2013 - August 2013
-      ul
-        li Wrote over 3000+ lines of code to upgrade API
-        li Switched majority of app to client side rendering
-        li Implemented hashtags inside application
-        li Improved loading time
-      h2 Skills
-      strong.skill-cat Programming Languages
-      div Javascript, Java, Ruby, Python HTML, CSS, Objective C,
-      | C++, HAML, RABL
-      br
-      strong.skill-cat Frameworks
-      div Ruby on Rails, IOS (beginner), Node.js
-      strong.skill-cat Applications
-      div Github, Xcode, Sublime, Amazon Web Services, Heroku
-    #resume-right
-      h2 Education
-      h3 Cornell University
-      h4 Computer Science - Est. Grad May 2016
-      strong→  Activities
-      br
-      | Society of Women Engineers - General Body Chair
-      br
-      | Cornell Daily Sun - Technical Reporter
-      br
-      | Cornell Science and Engineering Business Association
-      br
-      | Intramural Volleyball
+    #resume
+      h1#res_header Jessica Shu
+      div.info 415.490.7810 - js2634@cornell.edu - San Francisco, CA
+      #resume-left
+        .sub#work_exp
+          h2 Work Experience
+          h3 Yorango.com - Ithaca, NY
+          h4 Lead of Mobile Development
+          h5 Feb 2013 - Present
+          ul
+            li • Main advocate of stronger mobile presence for Yorango
+            li • Planned mobile milestones and created first prototypes
+            li • Product management + IOS development
+          h3 Inigral - San Francisco, CA
+          h4 Ruby on Rails Developer - Intern
+          h5 May 2013 - August 2013
+          ul
+            li • Wrote over 3000+ lines of code to upgrade API
+            li • Switched majority of app to client side rendering
+            li • Implemented hashtags inside application
+            li • Improved loading time
+        .sub#skills
+          h2 Skills
+          strong.skill-cat Programming Languages
+          div Javascript, Java, Ruby, Python HTML, CSS, Objective C,
+          | C++, HAML, RABL
+          br
+          strong.skill-cat Frameworks
+          div Ruby on Rails, IOS (beginner), Node.js
+          strong.skill-cat Applications
+          div Github, Xcode, Sublime, Amazon Web Services, Heroku <br><br>
+        .ref References provided upon request
+      #resume-right
+        .sub#edu
+          h2 Education
+          h3 Cornell University
+          h4 Computer Science - Class of 2016
+          strong Activities
+          br
+          | Society of Women Engineers - General Body Chair
+          br
+          | Cornell Daily Sun - Technical Reporter
+          br
+          | Cornell Science and Engineering Business Association
+          br
+          | Intramural Volleyball
 
-      h3 Lowell High School
-      h4 2012 - 2016
-      strong→  Activities
+          h3 Lowell High School
+          h4 2012 - 2016
+          strong Activities
+          br
+          | First Robotics - Head of Electronics
+          br
+          | Mathletes - President <br/><br/>
+        .sub#prize
+          h2 Awards
+          ul.awards
+            li‣ McMullen Dean Scholarship Recipient
+            li‣ Cornell Java Programming Competition
+              div 5th place out of 450+ Cornell CS Students
+            li‣ California Math League 2011, 2012
+              div Consecutive 1st place Regional Winner
+            li‣ Ivan Barker Award for Excellence in Mathematics
+            li‣ Cornell Stock Competition
+              div First Place
+            li‣ MathCounts 2008
+              div 1st place Regional Winner SF Bay Area
+              div Top Ten Statewide (CA)
       br
-      | First Robotics - Head of Electronics
-      br
-      | Mathletes - President
-      br
-      h2 Awards
-      ul.awards
-        li McMullen Dean Scholarship Recipient
-        li Cornell Java Programming Competition
-          div → 5th place out of 450+ Cornell CS Students
-        li California Math League 2011, 2012
-          div → Consecutive 1st place Regional Winner
-        li Ivan Barker Award for Excellence in Mathematics
-        li Cornell Stock Competition
-          div → First Place
-        li MathCounts 2008
-          div → 1st place Regional Winner SF Bay Area
-          div → Top Ten Statewide (CA)
-      .ref References provided upon request
 
 
 

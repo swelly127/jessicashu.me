@@ -3,11 +3,15 @@ block css
   link(rel='stylesheet', href='/stylesheets/blog.css')
   link(rel='stylesheet', href='/stylesheets/index.css')
 block content
-  div.container
-    - for (var x = 0; x < text_blob.length; x++)
+  - for (var x = 0; x < text_blob.length; x++)
+    .container
+    .blog
+      <br>
       h2.title= text_blob[x].title.trim()
       p.date= text_blob[x].date
       p.content!= text_blob[x].content.trim()
+      br
+  .container
   #footer(style="display: block; text-align: center")
     |Created by
     a(href="https://facebook.com/swelly127/", target="_blank")  Jessica Shu

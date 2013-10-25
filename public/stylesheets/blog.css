@@ -1,3 +1,13 @@
 p.content{
 	font-size: 14px;
 }
+.blog p, h2 {
+	margin-left: 20px;
+}
+.title {
+	margin-top: 0px;
+	color: darkBlue;
+}
+.content {
+	margin-bottom: 10px;
+}

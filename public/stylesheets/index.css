@@ -4,8 +4,9 @@ div.container {
 	display: block;
 	margin-left: 25px;
 }
-h2.left {
-	display: block;
+h2.right {
+	cursor: crosshair;
+	color: white;
 	width: 300px;
 	float: left;
 }
