@@ -42,10 +42,10 @@ block content
                   br
                   label.field#message_label(for="message") Message:
                   - if (msg == "")
-                    textarea.text-input#message(type="text", rows="7", name="message", value=msg)
+                    textarea.text-input#message(type="text", rows="7", name="message")
                     label.error#name_error(for="name") *Empty Message
                   - else if (!msg)
-                    textarea.text-input#message(placeholder="Hey Jessica! Let's grab coffee sometime and talk about...", type="text", rows="7", name="message", value="")
+                    textarea.text-input#message(placeholder="Hey Jessica! Let's grab coffee sometime and talk about...", type="text", rows="7", name="message")
                   - else
                     textarea.text-input#message(type="text", rows="7", name="message") #{msg}
                 br

@@ -37,7 +37,7 @@ app.get('/users', user.list);
 app.get('/messages', routes.messages)
 app.get('/new_post', routes.new_post)
 app.get('/plz_stop', routes.plz_stop)
-app.post('/add', routes.add);
+app.post('/new_post', routes.add);
 app.post('/contact', routes.addmsg);
 
 app.listen(process.env.PORT || 3000, function(){

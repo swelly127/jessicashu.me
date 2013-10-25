@@ -44,7 +44,7 @@ img {
   font-size: 14px;
 }
 
-#contact_box .error {
+.error {
   clear: none !important;
   color: #D00;
 }

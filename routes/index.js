@@ -5,6 +5,7 @@
 var mongoose = require("mongoose");
 var Post = mongoose.model("Post");
 var Message = mongoose.model("Message");
+var utils = require('utils');
 
 exports.index = function(req, res){
   res.render('index', {
@@ -68,10 +69,16 @@ exports.messages = function(req, res){
 };
 
 exports.add = function(req, res){
-  if (req.body.password.trim() == "sushi4ever"){
+  if (req.body.title == "" || req.body.content == "") {
+    res.render('new_post', {
+      title: "New",
+      post_title: req.body.title,
+      body: req.body.content
+    });
+  } else if (req.body.password.trim() == "sushi4ever") {
     var temp = new Post({
       title: req.body.title,
-      content: req.body.content,
+      content: utils.parse_input(req.body.content),
       date: Date.now()
     }).save(function(){
       console.log("post saved!");
@@ -86,7 +93,7 @@ exports.addmsg = function(req, res){
   var temp = new Message({
     name: req.body.name.trim(),
     email: req.body.email.trim(),
-    content: req.body.message.trim(),
+    content: utils.parse_input(req.body.message),
     date: Date.now()
   }).save(function(){
     console.log("message saved!");

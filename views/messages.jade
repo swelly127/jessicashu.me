@@ -5,7 +5,7 @@ block content
   - for (var x = 0; x < messages.length; x++)
     div.container
       - var content = messages[x].content != "" ? messages[x].content : "Private Message"
-        h2.msg= content
+        h2.msg!= content
           p.date #{messages[x].date}
           - if (messages[x].name == "" && messages[x].email == "")
             .name(style="color:red") Unknown
