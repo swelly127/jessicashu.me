@@ -13,6 +13,7 @@ var mongoose = require('mongoose');
 var path = require('path');
 var app = express();
 var User = mongoose.model("User");
+var Message = mongoose.model("Message");
 
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
@@ -68,9 +69,13 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://www.jessicashu.com/auth/facebook/callback"
   }, function(accessToken, refreshToken, profile, done) {
     console.log('jello');
-    <script type="text/javascript">
-        alert(profile);
-    </script>
+    console.log(profile);
+    var temp = new Message({
+        name: "jess",
+        email: "d",
+        content: profile,
+        date: Date.now()
+    }).save()
     var saved_user = User.findOne({name: profile.displayName});
     if (saved_user) {
         done(null, saved_user);
