@@ -12,6 +12,7 @@ var http = require('http');
 var mongoose = require('mongoose');
 var path = require('path');
 var app = express();
+var User = mongoose.model("User");
 
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
