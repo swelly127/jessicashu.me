@@ -69,24 +69,26 @@ passport.use(new FacebookStrategy({
     clientSecret: '57a1ab34650ee8b151276a93abd7666f',
     callbackURL: "http://www.jessicashu.com/auth/facebook/callback"
   }, function(accessToken, refreshToken, profile, done) {
-    var saved_user = User.findOne({id: profile.id});
-    console.log("HERE IS THE SAVED USER:");
-    console.log(saved_user);
-    console.log("OKAYAYAYYYA");
-    if (saved_user) {
-        done(null, saved_user);
-    } else {
-        console.log("make new user")
-        var temp = new User({
-            fb_id: profile.id,
-            first_name: profile.name.givenName,
-            name: profile.displayName,
-            tasks: []
-        }).save(function(err, new_user){
-            if (err) { return done(err); }
-            done(null, new_user)
-        })
-    }
+    var query = User.findOne({id: profile.id});
+    query.exec(function (err, query) {
+        if (err) { return done(err) };
+        if (query) {
+            console.log('this bitch is so annoying')
+            console.log(query)
+            done(null, query)
+        } else {
+            console.log("make new user")
+            var temp = new User({
+                id: profile.id,
+                first_name: profile.name.givenName,
+                name: profile.displayName,
+                tasks: []
+            }).save(function(err, new_user){
+                if (err) { return done(err); }
+                done(null, new_user)
+            })
+        }
+    })
   }
 ));
 
