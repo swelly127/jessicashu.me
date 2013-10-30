@@ -63,6 +63,7 @@ app.get('/new_post', routes.new_post)
 app.get('/plz_stop', routes.plz_stop)
 app.post('/new_post', routes.add);
 app.post('/contact', routes.addmsg);
+app.post('/', user.addtask);
 
 passport.use(new FacebookStrategy({
     clientID: '502542769799772',
@@ -73,13 +74,11 @@ passport.use(new FacebookStrategy({
     query.exec(function (err, query) {
         if (err) { return done(err) };
         if (query) {
-            console.log('this bitch is so annoying')
-            console.log(query)
             done(null, query)
         } else {
-            console.log("make new user")
             var temp = new User({
                 id: profile.id,
+                username: profile.username,
                 first_name: profile.name.givenName,
                 name: profile.displayName,
                 tasks: []

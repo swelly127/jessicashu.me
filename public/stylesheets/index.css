@@ -17,3 +17,8 @@
 	width: 500px;
 	float: left;
 }
+
+#container-right h1.welcome {
+	font-weight: 200em;
+	color: maroon;
+}

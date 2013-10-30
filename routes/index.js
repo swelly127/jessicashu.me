@@ -9,10 +9,9 @@ var utils = require('utils');
 
 exports.index = function(req, res){
   res.render('index', {
+    picture: utils.get_picture(req.user),
     user: req.user,
-  	title: "Jessica Shu",
-  	software: "Express",
-  	stylesheet: "homepage.css"
+  	title: "Homepage"
   });
 };
 
@@ -50,14 +49,18 @@ exports.plz_stop = function(req, res){
 };
 
 exports.new_post = function(req, res){
-  res.render('new_post', {
-    title: "New"
-  });
+  if (req.user && req.user.username=='swelly127'){
+    res.render('new_post', {
+      title: "New"
+    });
+  } else {
+    res.redirect('/');
+  }
 };
 
 exports.messages = function(req, res){
   Message.find().sort({date: -1}).exec(function(err, message){
-    if (message && message[0]){
+    if (message && message[0] && req.user && req.user.username=='swelly127'){
       res.render('messages', {
         title: "Inbox",
         messages: message

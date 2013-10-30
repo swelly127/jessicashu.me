@@ -29,6 +29,7 @@ var task = new Schema({
 		type: Schema.ObjectId,
 		ref: 'user'
 	},
+	finished_date: Date,
 	due_date: Date
 })
 
@@ -36,6 +37,10 @@ var task = new Schema({
 var user = new Schema({
 	id: {
 		type: Number,
+		unique: true
+	},
+	username: {
+		type: String,
 		unique: true
 	},
 	first_name: String,
