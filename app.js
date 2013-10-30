@@ -70,7 +70,7 @@ passport.use(new FacebookStrategy({
     console.log('jello');
     console.log(profile);
     var saved_user = User.find({name: profile.displayName});
-    if (saved_user) {
+    if (saved_user && saved_user[0]) {
         done(null, saved_user);
     } else {
         var temp = new User({
