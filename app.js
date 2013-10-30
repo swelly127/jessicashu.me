@@ -69,15 +69,16 @@ passport.use(new FacebookStrategy({
     clientSecret: '57a1ab34650ee8b151276a93abd7666f',
     callbackURL: "http://www.jessicashu.com/auth/facebook/callback"
   }, function(accessToken, refreshToken, profile, done) {
-    var saved_user = User.find({id: profile.id});
+    var saved_user = User.findOne({id: profile.id});
     console.log("HERE IS THE SAVED USER:");
-    console.log(saved_user)
-    if (saved_user && saved_user[0]) {
+    console.log(saved_user);
+    console.log("OKAYAYAYYYA");
+    if (saved_user) {
         done(null, saved_user);
     } else {
         console.log("make new user")
         var temp = new User({
-            id: profile.id,
+            fb_id: profile.id,
             first_name: profile.name.givenName,
             name: profile.displayName,
             tasks: []
