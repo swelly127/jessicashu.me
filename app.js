@@ -52,12 +52,12 @@ app.get('/plz_stop', routes.plz_stop)
 app.post('/new_post', routes.add);
 app.post('/contact', routes.addmsg);
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function(user.email, done) {
   done(null, user.email);
 });
 
 passport.deserializeUser(function(user_email, done) {
-  User.find({email:user_email}, function(err, user) {
+  User.findOne({email:user_email}, function(err, user) {
     done(err, user);
   });
 });
@@ -68,10 +68,10 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://www.jessicashu.com/auth/facebook/callback"
   }, function(accessToken, refreshToken, profile, done) {
     console.log('jello');
-    console.log(profile);
-    var saved_user = User.find({name: profile.displayName});
-    if (saved_user && saved_user[0]) {
-        done(null, saved_user[0]);
+    alert(profile);
+    var saved_user = User.findOne({name: profile.displayName});
+    if (saved_user) {
+        done(null, saved_user);
     } else {
         var temp = new User({
             email: "jessicashu127@gmail.com",
