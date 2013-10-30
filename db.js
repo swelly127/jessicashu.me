@@ -34,7 +34,7 @@ var task = new Schema({
 
 
 var user = new Schema({
-	email: {
+	id: {
 		type: String,
 		unique: true
 	},
