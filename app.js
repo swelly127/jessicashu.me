@@ -67,12 +67,14 @@ passport.use(new FacebookStrategy({
     clientSecret: '57a1ab34650ee8b151276a93abd7666f',
     callbackURL: "http://www.jessicashu.com/auth/facebook/callback"
   }, function(accessToken, refreshToken, profile, done) {
-    var saved_user = User.find({name: profile.emails[0].value});
+    console.log('jello');
+    console.log(profile);
+    var saved_user = User.find({name: profile.displayName});
     if (saved_user) {
         done(null, saved_user);
     } else {
         var temp = new User({
-            email: profile.emails[0].value,
+            email: "jessicashu127@gmail.com",
             name: profile.displayName,
             tasks: []
         }).save(function(err){
