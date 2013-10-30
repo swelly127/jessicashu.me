@@ -18,7 +18,6 @@ exports.addtask = function(req, res){
     }).save(function(err, task){
       if (err) { console.log("task not saved - error"); }
       else {
-        req.user.tasks.
         User.update({username: req.user.username}, {$push: {tasks:task}}, {upsert:true})
       }
     });
