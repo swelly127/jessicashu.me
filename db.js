@@ -1,7 +1,5 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
-var mongooseAuth = require("mongoose-auth");
-var everyauth = require('everyauth');
 
 var post = new Schema({
 	title: String,
