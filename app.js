@@ -71,7 +71,9 @@ passport.use(new FacebookStrategy({
   }, function(accessToken, refreshToken, profile, done) {
     var saved_user = User.findOne({id: profile.id});
     if (saved_user) {
-      console.log(saved_user)
+        console.log("HELLLO")
+        console.log(saved_user)
+        console.log("GOODBYE")
         done(null, saved_user);
     } else {
         var temp = new User({
@@ -79,7 +81,9 @@ passport.use(new FacebookStrategy({
             name: profile.displayName,
             tasks: []
         }).save(function(err, new_user){
-          console.log(new_user);
+            console.log("HELLLO AGAIN")
+            console.log(new_user);
+            console.log("BYEEE")
             if (err) { return done(err); }
             done(null, new_user)
         })
