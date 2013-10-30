@@ -18,6 +18,17 @@ var Message = mongoose.model("Message");
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(user_id, done) {
+  User.findOne({id:user_id}, function(err, user) {
+    done(err, user);
+  });
+});
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
@@ -53,16 +64,6 @@ app.get('/plz_stop', routes.plz_stop)
 app.post('/new_post', routes.add);
 app.post('/contact', routes.addmsg);
 
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
-
-passport.deserializeUser(function(user_id, done) {
-  User.findOne({id:user_id}, function(err, user) {
-    done(err, user);
-  });
-});
-
 passport.use(new FacebookStrategy({
     clientID: '502542769799772',
     clientSecret: '57a1ab34650ee8b151276a93abd7666f',
@@ -70,6 +71,7 @@ passport.use(new FacebookStrategy({
   }, function(accessToken, refreshToken, profile, done) {
     var saved_user = User.findOne({id: profile.id});
     if (saved_user) {
+      console.log(saved_user)
         done(null, saved_user);
     } else {
         var temp = new User({
@@ -77,6 +79,7 @@ passport.use(new FacebookStrategy({
             name: profile.displayName,
             tasks: []
         }).save(function(err, new_user){
+          console.log(new_user);
             if (err) { return done(err); }
             done(null, new_user)
         })
