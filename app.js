@@ -51,25 +51,21 @@ app.get('/plz_stop', routes.plz_stop)
 app.post('/new_post', routes.add);
 app.post('/contact', routes.addmsg);
 
+passport.serializeUser(function(user, done) {
+  done(null, user.email);
+});
+
+passport.deserializeUser(function(user_email, done) {
+  User.find({email:user_email}, function(err, user) {
+    done(err, user);
+  });
+});
 
 passport.use(new FacebookStrategy({
     clientID: '502542769799772',
     clientSecret: '57a1ab34650ee8b151276a93abd7666f',
     callbackURL: "http://www.jessicashu.com/auth/facebook/callback"
   }, function(accessToken, refreshToken, profile, done) {
-    // asynchronous verification, for effect...
-    process.nextTick(function () {
-
-      // To keep the example simple, the user's Facebook profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the Facebook account with a user record in your database,
-      // and return that user instead.
-      return done(null, profile);
-    });
-  }));
-  /*
-    console.log("hello");
-    console.log(profile);
     var saved_user = User.find({name: profile.emails[0].value});
     if (saved_user) {
         done(null, saved_user);
@@ -84,7 +80,7 @@ passport.use(new FacebookStrategy({
         })
     }
   }
-)); */
+));
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', {
