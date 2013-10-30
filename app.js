@@ -52,7 +52,7 @@ app.get('/plz_stop', routes.plz_stop)
 app.post('/new_post', routes.add);
 app.post('/contact', routes.addmsg);
 
-passport.serializeUser(function(user.email, done) {
+passport.serializeUser(function(user, done) {
   done(null, user.email);
 });
 
