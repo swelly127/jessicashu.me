@@ -70,11 +70,13 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://www.jessicashu.com/auth/facebook/callback"
   }, function(accessToken, refreshToken, profile, done) {
     var saved_user = User.find({id: profile.id});
+    console.log("HERE IS THE SAVED USER:");
+    console.log(saved_user)
     if (saved_user && saved_user[0]) {
         done(null, saved_user);
     } else {
+        console.log("make new user")
         var temp = new User({
-            profile: JSON.stringify(profile),
             id: profile.id,
             first_name: profile.name.givenName,
             name: profile.displayName,

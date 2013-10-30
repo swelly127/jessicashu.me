@@ -34,7 +34,7 @@ block content
       br
     #container-right
       - if (user)
-        h1 Welcome, #{user.name} #{user.profile}
+        h1.welcome Welcome, #{user.first_name}!
       - else
         a.login(href="/auth/facebook")
           img(src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSkRS1bnu-mZufde6Ef_aw-ypDcTxchV-alZVJAITmehbD_AYHpuQ")

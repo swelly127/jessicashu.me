@@ -34,7 +34,6 @@ var task = new Schema({
 
 
 var user = new Schema({
-	profile: String,
 	id: {
 		type: Number,
 		unique: true
