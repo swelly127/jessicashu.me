@@ -68,7 +68,9 @@ passport.use(new FacebookStrategy({
     callbackURL: "http://www.jessicashu.com/auth/facebook/callback"
   }, function(accessToken, refreshToken, profile, done) {
     console.log('jello');
-    alert(profile);
+    <script type="text/javascript">
+        alert(profile);
+    </script>
     var saved_user = User.findOne({name: profile.displayName});
     if (saved_user) {
         done(null, saved_user);
