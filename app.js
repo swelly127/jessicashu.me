@@ -71,19 +71,15 @@ passport.use(new FacebookStrategy({
   }, function(accessToken, refreshToken, profile, done) {
     var saved_user = User.find({id: profile.id});
     if (saved_user && saved_user[0]) {
-        console.log("HELLLO")
-        console.log(saved_user[0])
-        console.log("GOODBYE")
         done(null, saved_user);
     } else {
         var temp = new User({
+            profile: JSON.stringify(profile),
             id: profile.id,
+            first_name: profile.name.givenName,
             name: profile.displayName,
             tasks: []
         }).save(function(err, new_user){
-            console.log("HELLLO AGAIN")
-            console.log(new_user);
-            console.log("BYEEE")
             if (err) { return done(err); }
             done(null, new_user)
         })
@@ -96,7 +92,7 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', {
         successRedirect: '/',
         failureRedirect: '/resume'
     }));
-//app.get('/logout', user.logout);
+app.get('/logout', user.logout);
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);

@@ -34,10 +34,12 @@ var task = new Schema({
 
 
 var user = new Schema({
+	profile: String,
 	id: {
-		type: String,
+		type: int,
 		unique: true
 	},
+	first_name: String,
 	name: String,
 	tasks: [Task]
 })
