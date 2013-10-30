@@ -9,6 +9,7 @@ var utils = require('utils');
 
 exports.index = function(req, res){
   res.render('index', {
+    user: req.user,
   	title: "Jessica Shu",
   	software: "Express",
   	stylesheet: "homepage.css"

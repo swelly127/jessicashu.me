@@ -3,7 +3,8 @@ extends layout
 block css
   link(rel='stylesheet', href='/stylesheets/index.css')
 block content
-  div.container
+  .container
+  #container
     h2 about me
     #container-left
       #short-bio-container
@@ -31,7 +32,12 @@ block content
       | by contacting me here or finding me on facebook.
       br
       br
-    h2.right EASTER EGG
+    #container-right
+      - if (user)
+        h1 hello #{user.name}
+      - else
+        a.login(href="/auth/facebook")
+          img(src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSkRS1bnu-mZufde6Ef_aw-ypDcTxchV-alZVJAITmehbD_AYHpuQ")
   #footer(style="display: block; text-align: center")
     |Created by
     a(href="https://facebook.com/swelly127/", target="_blank")  Jessica Shu

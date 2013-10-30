@@ -1,16 +1,19 @@
-
-div.container {
+.container{margin-left: 25px;}
+#container {
 	overflow: auto;
-	display: block;
 	margin-left: 25px;
 }
-h2.right {
-	cursor: crosshair;
-	color: white;
-	width: 300px;
+#container #container-right {
+	margin-top: 0px;
+	width: 400px;
+	margin-left: 50px;
 	float: left;
+	text-align: center;
 }
-.container #container-left {
+#container #container-right h1 {
+	text-align: center;
+}
+#container #container-left {
 	width: 500px;
 	float: left;
 }
