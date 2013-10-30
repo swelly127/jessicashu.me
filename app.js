@@ -71,15 +71,15 @@ passport.use(new FacebookStrategy({
     console.log(profile);
     var saved_user = User.find({name: profile.displayName});
     if (saved_user && saved_user[0]) {
-        done(null, saved_user);
+        done(null, saved_user[0]);
     } else {
         var temp = new User({
             email: "jessicashu127@gmail.com",
             name: profile.displayName,
             tasks: []
-        }).save(function(err){
+        }).save(function(err, new_user){
             if (err) { return done(err); }
-            done(null, user)
+            done(null, new_user)
         })
     }
   }
