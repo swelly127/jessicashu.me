@@ -8,10 +8,6 @@ var Task = mongoose.model("Task");
 var utils = require('utils');
 
 exports.addtask = function(req, res){
-  console.log("date we have is");
-  console.log(req.body.date);
-  console.log("we made");
-  console.log(utils.parse_date(req.body.date));
   if (req.body.content.trim()!=""){
     var temp = new Task({
       content: req.body.content.trim(),
@@ -20,13 +16,13 @@ exports.addtask = function(req, res){
       finished_date: null,
       due_date: utils.parse_date(req.body.date)
     }).save(function(err, task){
-      if (err) { console.log("task not saved - error");
-      console.log(err); }
+      if (err) {
+      	console.log(err); }
       else {
       	req.user.tasks.push(task)
-      	console.log("LOOKATME!!")
-      	console.log(req.user.tasks)
-        User.update({username: req.user.username}, {tasks: req.user.tasks})
+        User.findOneAndUpdate({id: req.user.id}, {tasks: req.user.tasks}, function(err){
+        	console.log("couldn't save task to user");
+        })
       }
     });
   } res.redirect('/');
