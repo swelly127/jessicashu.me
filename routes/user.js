@@ -18,8 +18,10 @@ exports.addtask = function(req, res){
     }).save(function(err, task){
       if (err) { console.log("task not saved - error"); }
       else {
-        req.user.tasks.push(task);
-        req.user.save();
+      	req.users.tasks.push(task)
+      	console.log("LOOKATME!!")
+      	console.log(req.users.tasks)
+        User.update({username: req.user.username}, {tasks: req.users.tasks})
       }
     });
   } res.redirect('/');
