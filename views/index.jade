@@ -46,10 +46,11 @@ block content
               p.date by user.tasks[x].due_date
               br
           form.form-inline(method="post", action="/")
-            input.input-xxlarge(type="text", placeholder="task", name="content")
+            label.field(for="content") Task:
+            input.input-xxlarge(type="text", placeholder="do this", name="content")
+            label.field(for="date") Due Date:
             aside.widget
-              p Date:
-              input#datepick(type="text", name="date")
+              input#datepick(type="text", placeholder="by this day", name="date")
             button.btn(style="margin-top:10px; display:block;", type="submit") add task
       - else
         a.login(href="/auth/facebook")
