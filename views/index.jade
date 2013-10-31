@@ -2,6 +2,7 @@ extends layout
 
 block css
   link(rel='stylesheet', href='/stylesheets/index.css')
+  link(rel='stylesheet', href='/stylesheets/contact.css')
   link(rel="stylesheet", type="text/css", href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css",media="all")
   script(type="text/javascript",src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
   script(type="text/javascript",src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js")
@@ -38,20 +39,21 @@ block content
     #container-right
       - if (user)
         h1.welcome Welcome, #{user.first_name}!
-        h2 Tasks
-          - for (var x = 0; x < user.tasks.length; x++)
-            .task
-              <br>
-              h2.title= user.tasks[x].content
-              p.date by user.tasks[x].due_date
-              br
-          form.form-inline(method="post", action="/")
-            label.field(for="content") Task:
-            input.input-xxlarge(type="text", placeholder="do this", name="content")
-            label.field(for="date") Due Date:
-            aside.widget
-              input#datepick(type="text", placeholder="by this day", name="date")
-            button.btn(style="margin-top:10px; display:block;", type="submit") add task
+        - if (user.username == "swelly127")
+          h2 Tasks
+            - for (var x = 0; x < user.tasks.length; x++)
+              .task
+                <br>
+                div.title= user.tasks[x].content
+                p.date by #{user.tasks[x].due_date}
+                br
+            form.form-inline(method="post", action="/")
+              label.field(for="content") Task:
+              input.input-xxlarge(type="text", placeholder="do this", name="content")
+              label.field(for="date") Due Date:
+              aside.widget
+                input#datepick(type="text", placeholder="by this day", name="date")
+              button.btn(style="margin-top:10px; display:block;", type="submit") add task
       - else
         a.login(href="/auth/facebook")
           img(src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSkRS1bnu-mZufde6Ef_aw-ypDcTxchV-alZVJAITmehbD_AYHpuQ")
