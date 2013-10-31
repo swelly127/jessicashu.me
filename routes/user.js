@@ -9,7 +9,7 @@ var utils = require('utils');
 
 exports.addtask = function(req, res){
   console.log("date we have is");
-  console.log(res.body.date);
+  console.log(req.body.date);
   console.log("we made");
   console.log(utils.parse_date(req.body.date));
   if (req.body.content.trim()!=""){
