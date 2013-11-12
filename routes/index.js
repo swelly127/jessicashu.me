@@ -102,8 +102,7 @@ exports.addmsg = function(req, res){
   }).save(function(){
     console.log("message saved!");
     s = req.body.name != "" && req.body.message != "" && req.body.email.indexOf("@") != -1
-    res.render('contact', {
-      title: "Contact Me",
+    res.render('index', {
       name: req.body.name,
       email: req.body.email,
       msg: req.body.message,

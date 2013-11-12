@@ -1,10 +1,9 @@
 extends layout
 block css
   link(rel='stylesheet', href='/stylesheets/blog.css')
-  link(rel='stylesheet', href='/stylesheets/index.css')
 block content
   - for (var x = 0; x < text_blob.length; x++)
-    .container
+    .container(style="margin-left=0px; z-value: 999999;")
     .blog
       <br>
       h2.title= text_blob[x].title.trim()

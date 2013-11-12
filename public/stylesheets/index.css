@@ -1,30 +1,25 @@
-.container{margin-left: 25px;}
-#container {
+.container{
 	overflow: auto;
 	margin-left: 25px;
+	margin-right: 25px;
+	width: 100%;
 }
-#container #container-right {
-	margin-top: 0px;
-	width: 400px;
-	margin-left: 50px;
-	float: left;
-	text-align: center;
+#container {
+	overflow: hidden;
+	margin-left: 25px;
+	margin-right: 25px;
 }
-#container #container-right h1 {
-	text-align: center;
+.uihack{
+	overflow: visible;
+	margin-left: 50%;
 }
-#container #container-left {
+
+#container .uihack #container-left {
+	margin-bottom: 20px;
+	overflow: visible;
+	margin-left: -250px;
 	width: 500px;
-	float: left;
-}
-
-#container-right h1.welcome {
-	font-weight: 200em;
-	color: maroon;
-}
-
-#container-right h2 form {
-	text-align: center;
+	float: center;
 }
 
 

@@ -4,7 +4,6 @@
 
 #contact_box #contact_left {
 	width: 200px;
-	margin-left: 75px;
 	float: left;
 }
 
@@ -20,7 +19,7 @@
 }
 
 img {
-  margin-top: 50px;
+  margin-top: 15px;
 }
 
 #contact_box #contact_left p {
@@ -35,9 +34,9 @@ img {
 }
 
 #contact_box #contact_right {
-	width: 400px;
-	margin-left: 75px;
-	float: left;
+	width: 250px;
+	margin-left: 30px;
+	float: right;
 }
 
 #contact_box #contact_right p {
@@ -50,7 +49,7 @@ img {
 }
 
 #contact_box #contact_right .success div {
-  margin-top: 30px;
+  margin-top: 25px;
   width: 300px;
   font-weight: 500;
   font-size: 16px;
@@ -61,5 +60,4 @@ img {
   font: 400 30px/1.2 'Merienda One', Helvetica, sans-serif;
   color: rgba(0,0,0,0.7);
   text-shadow: 3px 3px 3px #fff;
-  margin-bottom: 10px;
 }

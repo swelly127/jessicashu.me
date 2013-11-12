@@ -55,15 +55,13 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/contact', routes.contact)
 app.get('/blog', routes.blog)
 app.get('/resume', routes.resume)
 app.get('/messages', routes.messages)
 app.get('/new_post', routes.new_post)
-app.get('/plz_stop', routes.plz_stop)
+app.get('/secret', routes.plz_stop)
 app.post('/new_post', routes.add);
-app.post('/contact', routes.addmsg);
-app.post('/', user.addtask);
+app.post('/', routes.addmsg);
 
 passport.use(new FacebookStrategy({
     clientID: '502542769799772',
