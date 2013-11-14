@@ -59,17 +59,17 @@ exports.new_post = function(req, res){
 };
 
 exports.messages = function(req, res){
-  Message.find().sort({date: -1}).exec(function(err, message){
-    if (message && message[0] && req.user && req.user.username=='swelly127'){
+//  Message.find().sort({date: -1}).exec(function(err, message){
+//    if (message && message[0] && req.user && req.user.username=='swelly127'){
       res.render('messages', {
         title: "Inbox",
         messages: message
       });
-    }
-    else {
-      res.redirect('/');
-    };
-  });
+//    }
+//    else {
+//      res.redirect('/');
+//    };
+//  });
 };
 
 exports.add = function(req, res){
