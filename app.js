@@ -59,6 +59,7 @@ app.get('/blog', routes.blog)
 app.get('/resume', routes.resume)
 app.get('/messages', routes.messages)
 app.get('/new_post', routes.new_post)
+app.get('/plz_stop', routes.plz_stop)
 app.post('/new_post', routes.add);
 app.post('/', routes.addmsg);
 
@@ -88,11 +89,12 @@ passport.use(new FacebookStrategy({
   }
 ));
 
-app.get('/auth/facebook', passport.authenticate('facebook'), function(req, res){});
+app.get('/secret', passport.authenticate('facebook'), function(req, res){});
 app.get('/auth/facebook/callback', passport.authenticate('facebook', {
         successRedirect: '/plz_stop',
         failureRedirect: '/resume'
     }));
+
 app.get('/logout', user.logout);
 
 app.listen(process.env.PORT || 3000, function(){
