@@ -1,4 +1,3 @@
-if (user.username == 'swelly127')
-	a(href="/messages") Here are your messages.
-else
-	h1 You don't have access to this page, #{user.name}
+h1 Welcome home, #{user.name}. You will like it here.
+- var picture = "http://graph.facebook.com/" + user.username +"/?fields=picture&type=large"
+img(href=#{picture})
