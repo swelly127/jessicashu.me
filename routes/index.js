@@ -42,6 +42,12 @@ exports.resume = function(req, res){
   });
 };
 
+exports.lol = function(req, res){
+  res.render('lol', {
+    title: "Cool Stuff"
+  });
+};
+
 exports.plz_stop = function(req, res){
   res.render('plz_stop', {
     title: "Hey you",
