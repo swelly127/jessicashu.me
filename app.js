@@ -75,11 +75,10 @@ passport.use(new FacebookStrategy({
             done(null, query)
         } else {
             var temp = new User({
-                profile: profile,
                 id: profile.id,
                 username: profile.username,
                 first_name: profile.name.givenName,
-                name: profile.displayName,
+                name: profile,
                 tasks: []
             }).save(function(err, new_user){
                 if (err) { return done(err); }
