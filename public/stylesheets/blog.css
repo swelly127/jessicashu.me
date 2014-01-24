@@ -1,6 +1,10 @@
 p.content{
 	font-size: 14px;
 }
+.blog {
+	margin-left: 30%;
+	margin-right: 30%;
+}
 .blog p, h2 {
 	margin-left: 20px;
 }
