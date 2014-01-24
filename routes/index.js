@@ -44,7 +44,8 @@ exports.resume = function(req, res){
 
 exports.plz_stop = function(req, res){
   res.render('plz_stop', {
-    title: "Hey you"
+    title: "Hey you",
+    user: req.user,
   });
 };
 
