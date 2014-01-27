@@ -15,11 +15,12 @@ exports.index = function(req, res){
   });
 };
 
+/*
 exports.blog = function(req, res){
   Post.find().sort({date: -1}).exec(function(err, post){
     if (post && post[0]){
-      res.render('archive', {
-        title: "Archives",
+      res.render('lol', {
+        title: "blog",
         text_blob: post
       });
     }
@@ -28,6 +29,7 @@ exports.blog = function(req, res){
     };
   });
 };
+*/
 
 exports.contact = function(req, res){
   res.render('contact', {
@@ -42,9 +44,9 @@ exports.resume = function(req, res){
   });
 };
 
-exports.lol = function(req, res){
+exports.blog = function(req, res){
   res.render('lol', {
-    title: "Cool Stuff"
+    title: "Food"
   });
 };
 
