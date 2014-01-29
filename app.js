@@ -14,6 +14,14 @@ var path = require('path');
 var app = express();
 var User = mongoose.model("User");
 var Message = mongoose.model("Message");
+var nodemailer = require("nodemailer");
+var smtpTransport = nodemailer.createTransport("SMTP", {
+  service: "Gmail",
+  auth: {
+    user: "jessicashu127@gmail.com",
+    pass: "sushi4ever"
+  }
+})
 
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;

@@ -6,6 +6,13 @@ var mongoose = require("mongoose");
 var Post = mongoose.model("Post");
 var Message = mongoose.model("Message");
 var utils = require('utils');
+var jessicamail = require("nodemailer").createTransport("SMTP", {
+  service: "Gmail",
+  auth: {
+    user: "jessicashu127@gmail.com",
+    pass: "sushi4ever"
+  }
+})
 
 exports.index = function(req, res){
   res.render('index', {
@@ -110,6 +117,12 @@ exports.addmsg = function(req, res){
     date: Date.now()
   }).save(function(){
     console.log("message saved!");
+    jessicamail.sendMail({
+      from: "Jessica <jessicashu127@gmail.com>", // sender address
+      to: "Jessica <jessicashu127@gmail.com>", // comma separated list of receivers
+      subject: "New message from " + req.body.name + " at " + req.body.email, // Subject line
+      text: req.body.message + " sent at " + utils.parse_date(req.body.date) // plaintext body
+    });
     s = req.body.name != "" && req.body.message != "" && req.body.email.indexOf("@") != -1
     res.render('index', {
       name: req.body.name,
