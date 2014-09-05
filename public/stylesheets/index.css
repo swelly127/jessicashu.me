@@ -1,7 +1,7 @@
 body {
-	background-color: : #322222;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	background-color: #322222;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
 .container{
 	overflow: auto;
@@ -22,7 +22,6 @@ body {
 #container .uihack #container-left {
 	padding: 50px;
 	background-color: white;
-	margin-bottom: 20px;
 	overflow: visible;
 	margin-left: -275px;
 	width: 500px;
