@@ -5,6 +5,7 @@ block css
   link(href="http://fonts.googleapis.com/css?family=Merienda+One",rel="stylesheet",type="text/css")
   link(rel='stylesheet', href='/stylesheets/contact.css')
   link(rel='stylesheet', href='/stylesheets/projects.css')
+  link(href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css",rel="stylesheet")
   link(rel="stylesheet", type="text/css", href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css",media="all")
   script(type="text/javascript",src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
   script(type="text/javascript",src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js")
@@ -14,16 +15,15 @@ block content
       #container-left
         h2 about me
         a(href="https://www.linkedin.com/people/invite?from=profile&key=213279118", target="_blank")
-          img(src="images/jessica.jpg", style="float:left; margin-top: 15px; margin-right:15px; margin-bottom: 10px;", width='100px')
+          img(src="images/jessica.jpg", style="float:left; margin-right:15px; margin-bottom: 10px;", width='100px')
         h3.short-bio
         div(style="width=250px;")
-          | I am a college junior studying computer science and business. I love to attend concerts,
-          | eat japanese food, and go to hackathons. I am currently
-          | on the east coast for school but plan to return to San Francisco after graduation.
+          | Jessica is a 19 year old college junior studying computer science and entrepreneurship
+          | at Cornell. She plans to join a startup after graduation
+          | and is currently seeking internship offers for Summer 2015.
+          | In her spare time, she likes to browse reddit and eat sushi.
         br
-        | In my spare time, I like to browse reddit while eating cheetos. I also enjoy
-        | playing volleyball, reading the news or trying out new resturants. Find out more
-        | by contacting me here or adding me on facebook.
+        | Feel free to reach out for any reason.
         br
         br
         h2 work experience
@@ -113,25 +113,74 @@ block content
                       .position
                         | Director of Dishes and Floor Mopping
                       .interval
-                        | Summer 2011 (HS)
+                        | Summer 2010 (HS)
+        h2 personal projects
+        .projects-3
+          .projects
+            .project-wrapper
+                .project
+                  .photo-wrapper
+                      a.photo(href="http://www.shrubfund.co/", target="_blank")
+                        img(src="/images/shrubfund-logo.jpg", alt="")
+                        .overlay
+                          span.fui-eye
+                  .info
+                    .name
+                      | ShrubFund
+                    .interval
+                      | July 2014 @ YC Hacks
+            .project-wrapper
+                .project
+                  .photo-wrapper
+                      a.photo(href="wind")
+                        img(src="/images/wind-turbine.jpg", alt="")
+                        .overlay
+                          span.fui-eye
+                  .info
+                    .name
+                      | Wind Turbine
+                    .interval
+                      | June 2010
+            .project-wrapper
+                .project
+                    .photo-wrapper
+                        a.photo(href="chrome")
+                          img(src="/images/mudkip-logo.png", alt="")
+                          .overlay
+                            span.fui-eye
+                    .info
+                      .name
+                        | Chrome Download Organizer
+                      .interval
+                        | Febuary 2014
         h2 contact me
         #contact_box(style="display: block;")
           #contact_left
             h2 reach me directly
             .contact_info
-              a(href="mailto: js2634@cornell.edu", target="_blank")
-                p
-                  i.icon-envelope.icon-large
-                  | js2634@cornell.edu
+              p.direct
+                i.fa.fa-phone
+                |415.490.7810
+              p.direct
+                i.fa.fa-skype
+                |swelly127
+              ul#social
+                li
+                  a(href="https://twitter.com/swelly127", target="_blank")
+                    i.fa.fa-twitter(title="Twitter")
+                li
+                  a(href="https://facebook.com/swelly127", target="_blank")
+                    i.fa.fa-facebook(title="Facebook")
+                li
+                  a(href="https://linkedin.com/in/jshu1", target="_blank")
+                    i.fa.fa-linkedin(title="LinkedIn")
+                li
+                  a(href="mailto: jessicashu127@gmail.com", target="_blank")
+                    i.fa.fa-envelope(title="Email")
+                li
+                  a(href='./images/_resume.pdf', target="_blank")
+                    i.fa.fa-file-text(title="Resume")
               a
-                p
-                  i.icon-phone.icon-large
-                  | 415.490.7810
-              a(href="http://www.twitter.com/swelly127", target="_blank")
-                p
-                  i.icon-twitter.icon-large
-                  | swelly127
-              a(href="http://www.facebook.com/swelly127", target="_blank")
                 img#mudkip(src="/images/hi-mudkip.gif")
           #contact_right
             h2 leave a message
@@ -144,22 +193,19 @@ block content
               #contact_form
                 form(name="contact", method='post', action='/')
                   fieldset
-                    label.field#name_label(for="name") Name:
-                    input.text-input#name(type="text", name="name", value=name)
+                    input.text-input#name(placeholder="Name", type="text", name="name", value=name)
                     -if (name == "")
                       label.error#name_error(for="name") &nbsp; *Invalid Name
                     br
-                    label.field#email_label(for="email") Email:
-                    input.text-input#email(type="text", name="email", value=email)
+                    input.text-input#email(placeholder="Email", type="text", name="email", value=email)
                     -if (email_sym == -1)
                       label.error#email_error(for="email") &nbsp; *Invalid Email
                     br
-                    label.field#message_label(for="message") Message:
                     - if (msg == "")
-                      textarea.text-input#message(type="text", rows="7", name="message")
+                      textarea.text-input#message(placeholder="Message", type="text", rows="7", name="message")
                       label.error#name_error(for="name") *Empty Message
                     - else if (!msg)
-                      textarea.text-input#message(placeholder="", type="text", rows="7", name="message")
+                      textarea.text-input#message(placeholder="Message", type="text", rows="7", name="message")
                     - else
                       textarea.text-input#message(type="text", rows="7", name="message") #{msg}
                   p

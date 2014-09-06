@@ -65,3 +65,24 @@
   color: rgba(0,0,0,0.7);
   text-shadow: 3px 3px 3px #fff;
 }
+
+.direct {font-size: 25px;}
+
+#social {
+    -webkit-padding-start: 0px;
+    font-size: 25px;
+    margin: 0px;
+}
+#social li {
+    display: inline;
+    list-style-type: none;
+}
+#social li a {
+  color: grey;
+}
+
+#social li a:hover {
+  color: purple;
+  margin-bottom: 2px;
+  text-decoration: none;
+}

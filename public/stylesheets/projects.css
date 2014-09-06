@@ -253,6 +253,7 @@ section * {
  * Project 3 stylesheet
  * */
 .projects-3 {
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 
@@ -383,6 +384,6 @@ section * {
 
 .info .interval {
   font-style: italic;
-  font-size: 10px;
+  font-size: 14px;
   color: black;
 }
