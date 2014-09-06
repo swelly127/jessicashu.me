@@ -4,6 +4,7 @@ block css
   link(rel='stylesheet', href='/stylesheets/index.css')
   link(href="http://fonts.googleapis.com/css?family=Merienda+One",rel="stylesheet",type="text/css")
   link(rel='stylesheet', href='/stylesheets/contact.css')
+  link(rel='stylesheet', href='/stylesheets/projects.css')
   link(rel="stylesheet", type="text/css", href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/smoothness/jquery-ui.css",media="all")
   script(type="text/javascript",src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js")
   script(type="text/javascript",src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js")
@@ -11,7 +12,7 @@ block content
   #container
     .uihack
       #container-left
-        h2(style="text-align:center;") about me
+        h2 about me
         a(href="https://www.linkedin.com/people/invite?from=profile&key=213279118", target="_blank")
           img(src="images/jessica.jpg", style="float:left; margin-top: 15px; margin-right:15px; margin-bottom: 10px;", width='100px')
         h3.short-bio
@@ -25,21 +26,113 @@ block content
         | by contacting me here or adding me on facebook.
         br
         br
+        h2 work experience
+        .projects-3
+          .projects
+            .project-wrapper
+                .project
+                  .photo-wrapper
+                      a.photo(href="http://www.yorango.com/", target="_blank")
+                        img(src="/images/yorango-logo.png", alt="")
+                        .overlay
+                          span.fui-eye
+                  .info
+                    .name
+                      | Yorango
+                    .position
+                      | Software Engineer
+                    .interval
+                      | Feb 2013 - Present
+            .project-wrapper
+                .project
+                  .photo-wrapper
+                      a.photo(href="http://www.edmodo.com/", target="_blank")
+                        img(src="/images/edmodo-logo.png", alt="")
+                        .overlay
+                          span.fui-eye
+                  .info
+                    .name
+                      | Edmodo
+                    .position
+                      | Software Engineer Intern
+                    .interval
+                      | Summer 2014
+            .project-wrapper
+                .project
+                    .photo-wrapper
+                        a.photo(href="http://www.uversity.com/", target="_blank")
+                          img(src="/images/uversity-logo.png", alt="")
+                          .overlay
+                            span.fui-eye
+                    .info
+                      .name
+                        | Uversity
+                      .position
+                        | Software Engineer Intern
+                      .interval
+                        | Summer 2013
+          .projects
+            .project-wrapper
+                .project
+                    .photo-wrapper
+                        a.photo(href="http://www.exploratorium.edu/", target="_blank")
+                          img(src="/images/exploratorium.jpg", alt="")
+                          .overlay
+                            span.fui-eye
+                    .info
+                      .name
+                        | Exploratorium
+                      .position
+                        | Explainer
+                      .interval
+                        | Summer 2012 (HS)
+            .project-wrapper
+                .project
+                    .photo-wrapper
+                        a.photo(href="http://www.cs.cornell.edu/Courses/cs3110/2014fa/course_info.php", target="_blank")
+                          img(src="/images/cornell-logo.jpg", alt="")
+                          .overlay
+                            span.fui-eye
+                    .info
+                      .name
+                        | Cornell University
+                      .position
+                        | CS 3110 Course Consultant
+                      .interval
+                        | Fall 2014
+            .project-wrapper
+                .project
+                    .photo-wrapper
+                        .photo
+                          img(src="/images/good-life.jpg", alt="")
+                          .overlay
+                            span.fui-eye
+                    .info
+                      .name
+                        | Good Life Grocery
+                      .position
+                        | Director of Dishes and Floor Mopping
+                      .interval
+                        | Summer 2011 (HS)
+        h2 contact me
         #contact_box(style="display: block;")
           #contact_left
-            h2 contact me directly
+            h2 reach me directly
             .contact_info
-              p
-                i.icon-envelope.icon-large
-                | js2634@cornell.edu
-              p
-                i.icon-phone.icon-large
-                | 415.490.7810
-              p
-                i.icon-twitter.icon-large
-                | swelly127
+              a(href="mailto: js2634@cornell.edu", target="_blank")
+                p
+                  i.icon-envelope.icon-large
+                  | js2634@cornell.edu
+              a
+                p
+                  i.icon-phone.icon-large
+                  | 415.490.7810
+              a(href="http://www.twitter.com/swelly127", target="_blank")
+                p
+                  i.icon-twitter.icon-large
+                  | swelly127
               a(href="http://www.facebook.com/swelly127", target="_blank")
-                img(src="/images/hi-mudkip.gif")
+                img#mudkip(src="/images/hi-mudkip.gif")
           #contact_right
             h2 leave a message
             - if (success)
@@ -66,7 +159,7 @@ block content
                       textarea.text-input#message(type="text", rows="7", name="message")
                       label.error#name_error(for="name") *Empty Message
                     - else if (!msg)
-                      textarea.text-input#message(placeholder="Hey Jessica!", type="text", rows="7", name="message")
+                      textarea.text-input#message(placeholder="", type="text", rows="7", name="message")
                     - else
                       textarea.text-input#message(type="text", rows="7", name="message") #{msg}
                   p

@@ -5,14 +5,10 @@ body {
 }
 .container{
 	overflow: auto;
-	margin-left: 25px;
-	margin-right: 25px;
 	width: 100%;
 }
 #container {
 	overflow: hidden;
-	margin-left: 25px;
-	margin-right: 25px;
 }
 .uihack{
 	overflow: visible;

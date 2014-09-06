@@ -3,12 +3,14 @@
 }
 
 #contact_box #contact_left {
+  padding-left: 20px;
 	width: 200px;
 	float: left;
 }
 
 #contact_box h2 {
   color: maroon;
+  text-align: left;
   font-size: 1.5em;
   font-weight: 300;
 }
@@ -18,19 +20,21 @@
   height: 123px;
 }
 
-img {
+#mudkip {
   margin-top: 15px;
 }
 
-#contact_box #contact_left p {
+#contact_box #contact_left a p {
+  color: black;
+  text-decoration: none;
 	margin-top: 20px;
-  font-size: 14px;
+  font-size: 13px;
 }
-
 
 #contact_box #contact_left i {
 	margin-right: 15px;
   height: 15px;
+  display: inline;
 }
 
 #contact_box #contact_right {
