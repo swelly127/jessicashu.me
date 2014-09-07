@@ -27,23 +27,22 @@ exports.chrome = function(req, res){
 
 exports.addmsg = function(req, res){
   sendgrid.send({
-    to:       "Jessica <jessicashu127@gmail.com>",
-    from:     "Jessica <jessicashu127@gmail.com>",
+    to:       "jessicashu127@gmail.com",
+    from:     "jessicashu127@gmail.com",
+    fromname: 'SendGrid',
     subject:  "New message from " + req.body.name + " at " + req.body.email,
     text:     req.body.message
   }, function(err, json) {
+    s = req.body.name != "" && req.body.message != "" && req.body.email.indexOf("@") != -1
     if (err) {
       console.error(err);
     }
-    s = req.body.name != "" && req.body.message != "" && req.body.email.indexOf("@") != -1
     console.log("message sent!");
     res.render('index', {
       name: req.body.name,
       email: req.body.email,
       msg: req.body.message,
       email_sym: req.body.email.indexOf("@"),
-      error: err,
-      env: process.env,
       success: s
     });
   });
