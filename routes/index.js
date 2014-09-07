@@ -2,15 +2,8 @@
 /*
  * GET home page.
  */
-var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
+var sendgrid = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
 var utils = require('utils');
-var jessicamail = require("nodemailer").createTransport("SMTP", {
-  service: "Gmail",
-  auth: {
-    user: "jessicashu127@gmail.com",
-    pass: "sushi4ever"
-  }
-})
 
 exports.index = function(req, res){
   res.render('index', {
@@ -19,22 +12,6 @@ exports.index = function(req, res){
   	title: "Homepage"
   });
 };
-
-/*
-exports.blog = function(req, res){
-  Post.find().sort({date: -1}).exec(function(err, post){
-    if (post && post[0]){
-      res.render('lol', {
-        title: "blog",
-        text_blob: post
-      });
-    }
-    else {
-      res.redirect('/');
-    };
-  });
-};
-*/
 
 exports.resume = function(req, res){
   res.render('resume', {
@@ -57,7 +34,15 @@ exports.addmsg = function(req, res){
     subject:  "New message from " + req.body.name + " at " + req.body.email,
     text:     req.body.message
   }, function(err, json) {
-    if (err) { return console.error(err); }
+    if (err) { return console.error(err);
+      res.render('index', {
+        name: err,
+        email: process.env,
+        msg: req.body.message,
+        email_sym: req.body.email.indexOf("@"),
+        success: s
+      });
+    }
     s = req.body.name != "" && req.body.message != "" && req.body.email.indexOf("@") != -1
     console.log("message sent!");
     res.render('index', {

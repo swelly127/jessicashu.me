@@ -11,7 +11,7 @@ var path = require('path');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 4000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.favicon());
@@ -40,6 +40,6 @@ app.get('/resume', routes.resume)
 app.post('/', routes.addmsg);
 
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 4000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
