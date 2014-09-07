@@ -20,7 +20,7 @@
   height: 123px;
 }
 
-#mudkip {
+#contact_picture {
   margin-top: 15px;
 }
 
@@ -50,6 +50,12 @@
 .error {
   clear: none !important;
   color: #D00;
+}
+
+#nope_meow_meow_meow #contact_right fieldset #message {
+background:url('/images/hypnotoad.gif');
+background-size: 250px 200px;
+background-repeat: no-repeat;
 }
 
 #contact_box #contact_right .success div {

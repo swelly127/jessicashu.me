@@ -132,7 +132,7 @@ block content
             .project-wrapper
                 .project
                   .photo-wrapper
-                      a.photo(href="wind")
+                      a.photo()
                         img(src="/images/wind-turbine.jpg", alt="")
                         .overlay
                           span.fui-eye
@@ -144,7 +144,7 @@ block content
             .project-wrapper
                 .project
                     .photo-wrapper
-                        a.photo(href="chrome")
+                        a.photo()
                           img(src="/images/mudkip-logo.png", alt="")
                           .overlay
                             span.fui-eye
@@ -181,14 +181,13 @@ block content
                   a(href='./images/_resume.pdf', target="_blank")
                     i.fa.fa-file-text(title="Resume")
               a
-                img#mudkip(src="/images/hi-mudkip.gif")
+                img#contact_picture(src="/images/hypnotoad.gif")
           #contact_right
             h2 leave a message
             - if (success)
               .success
                 p Thanks! I'll be in touch shortly.
-                div In the meantime:
-                iframe(width="280", height="210", src="//www.youtube.com/embed/sRFSmqcllQE", frameborder="0")
+                iframe(width="280", height="210", src="https://media.giphy.com/media/13ayyyRnHJKrug/giphy.gif", frameborder="0")
             - else
               #contact_form
                 form(name="contact", method='post', action='/')
@@ -202,11 +201,11 @@ block content
                       label.error#email_error(for="email") &nbsp; *Invalid Email
                     br
                     - if (msg == "")
-                      textarea.text-input#message(placeholder="Message", type="text", rows="7", name="message")
+                      textarea.text-input#message(placeholder="Message", type="text", rows="6", name="message")
                       label.error#name_error(for="name") *Empty Message
                     - else if (!msg)
-                      textarea.text-input#message(placeholder="Message", type="text", rows="7", name="message")
+                      textarea.text-input#message(placeholder="Message", type="text", rows="6", name="message")
                     - else
-                      textarea.text-input#message(type="text", rows="7", name="message") #{msg}
+                      textarea.text-input#message(type="text", rows="6", name="message") #{msg}
                   p
                     input.button#submit_btn(type="submit", name="submit", value="Submit")

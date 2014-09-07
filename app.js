@@ -63,12 +63,11 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
-app.get('/blog', routes.blog)
+app.get('/wind', routes.wind)
+app.get('/chrome', routes.chrome)
 app.get('/resume', routes.resume)
 app.get('/messages', routes.messages)
 app.get('/new_post', routes.new_post)
-app.get('/blog', routes.blog)
-app.get('/plz_stop', routes.plz_stop)
 app.post('/new_post', routes.add);
 app.post('/', routes.addmsg);
 
@@ -100,7 +99,7 @@ passport.use(new FacebookStrategy({
 
 app.get('/secret', passport.authenticate('facebook'), function(req, res){});
 app.get('/auth/facebook/callback', passport.authenticate('facebook', {
-        successRedirect: '/plz_stop',
+        successRedirect: '/blog',
         failureRedirect: '/resume'
     }));
 

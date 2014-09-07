@@ -51,17 +51,12 @@ exports.resume = function(req, res){
   });
 };
 
-exports.blog = function(req, res){
-  res.render('lol', {
-    title: "Food"
-  });
+exports.wind = function(req, res){
+  res.render('wind');
 };
 
-exports.plz_stop = function(req, res){
-  res.render('plz_stop', {
-    title: "Hey you",
-    user: req.user,
-  });
+exports.chrome = function(req, res){
+  res.render('chrome');
 };
 
 exports.new_post = function(req, res){
