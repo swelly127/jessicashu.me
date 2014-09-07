@@ -7,7 +7,7 @@ var utils = require('utils');
 
 exports.index = function(req, res){
   res.render('index', {
-  	title: "Homepage"
+  	title: "jessica"
   });
 };
 

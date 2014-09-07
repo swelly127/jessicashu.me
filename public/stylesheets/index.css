@@ -24,4 +24,16 @@ body {
 	float: center;
 }
 
+.tooltip {
+	color:red;
+}
+
+.tooltip-arrow {
+	color:blue;
+}
+
+.tooltip-inner {
+	font-size: 13px;
+}
+
 
