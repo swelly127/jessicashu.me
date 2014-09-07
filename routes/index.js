@@ -34,14 +34,10 @@ exports.addmsg = function(req, res){
     subject:  "New message from " + req.body.name + " at " + req.body.email,
     text:     req.body.message
   }, function(err, json) {
-    if (err) { return console.error(err);
-      res.render('index', {
-        name: err,
-        email: process.env,
-        msg: req.body.message,
-        email_sym: req.body.email.indexOf("@"),
-        success: s
-      });
+    if (err) {
+      console.error(err);
+      alert(err);
+      alert(process.env);
     }
     s = req.body.name != "" && req.body.message != "" && req.body.email.indexOf("@") != -1
     console.log("message sent!");
