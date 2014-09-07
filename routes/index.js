@@ -7,8 +7,6 @@ var utils = require('utils');
 
 exports.index = function(req, res){
   res.render('index', {
-    picture: utils.get_picture(req.user),
-    user: req.user,
   	title: "Homepage"
   });
 };
@@ -36,8 +34,6 @@ exports.addmsg = function(req, res){
   }, function(err, json) {
     if (err) {
       console.error(err);
-      alert(err);
-      alert(process.env);
     }
     s = req.body.name != "" && req.body.message != "" && req.body.email.indexOf("@") != -1
     console.log("message sent!");
@@ -46,6 +42,8 @@ exports.addmsg = function(req, res){
       email: req.body.email,
       msg: req.body.message,
       email_sym: req.body.email.indexOf("@"),
+      error: err,
+      env: process.env,
       success: s
     });
   });
