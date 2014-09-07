@@ -2,9 +2,7 @@
 /*
  * GET home page.
  */
-var mongoose = require("mongoose");
-var Post = mongoose.model("Post");
-var Message = mongoose.model("Message");
+var sendgrid  = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
 var utils = require('utils');
 var jessicamail = require("nodemailer").createTransport("SMTP", {
   service: "Gmail",
@@ -38,13 +36,6 @@ exports.blog = function(req, res){
 };
 */
 
-exports.contact = function(req, res){
-  res.render('contact', {
-  	title: "Contact Me",
-    user: "Jessica Shu"
-  });
-};
-
 exports.resume = function(req, res){
   res.render('resume', {
     title: "Experience"
@@ -59,68 +50,16 @@ exports.chrome = function(req, res){
   res.render('chrome');
 };
 
-exports.new_post = function(req, res){
-  if (req.user && req.user.username=='swelly127'){
-    res.render('new_post', {
-      title: "New"
-    });
-  } else {
-    res.redirect('/');
-  }
-};
-
-exports.messages = function(req, res){
-  Message.find().sort({date: -1}).exec(function(err, message){
-//    if (message && message[0] && req.user && req.user.username=='swelly127'){
-      res.render('messages', {
-        title: "Inbox",
-        messages: message
-      });
-//    }
-//    else {
-//      res.redirect('/');
-//    };
-  });
-};
-
-exports.add = function(req, res){
-  if (req.body.title == "" || req.body.content == "") {
-    res.render('new_post', {
-      title: "New",
-      post_title: req.body.title,
-      body: req.body.content
-    });
-  } else if (req.body.password.trim() == "sushi4ever") {
-    var temp = new Post({
-      title: req.body.title,
-      content: utils.parse_input(req.body.content),
-      date: Date.now()
-    }).save(function(){
-      console.log("post saved!");
-      res.redirect('/blog');
-    });
-  } else {
-      res.redirect('/plz_stop');
-  }
-};
-
 exports.addmsg = function(req, res){
-  var temp = new Message({
-    name: req.body.name.trim(),
-    email: req.body.email.trim(),
-    content: utils.parse_input(req.body.message),
-    date: Date.now()
-  }).save(function(){
-    console.log("message saved!");
-
-    jessicamail.sendMail({
-      from: "Jessica <jessicashu127@gmail.com>", // sender address
-      to: "Jessica <jessicashu127@gmail.com>", // comma separated list of receivers
-      subject: "New message from " + req.body.name + " at " + req.body.email, // Subject line
-      text: req.body.message // plaintext body
-    });
-
+  sendgrid.send({
+    to:       "Jessica <jessicashu127@gmail.com>",
+    from:     "Jessica <jessicashu127@gmail.com>",
+    subject:  "New message from " + req.body.name + " at " + req.body.email,
+    text:     req.body.message
+  }, function(err, json) {
+    if (err) { return console.error(err); }
     s = req.body.name != "" && req.body.message != "" && req.body.email.indexOf("@") != -1
+    console.log("message sent!");
     res.render('index', {
       name: req.body.name,
       email: req.body.email,
