@@ -353,6 +353,7 @@ section * {
 .projects-3 .projects .project:hover .photo-wrapper {
   background-color: #1abc9c;
 }
+
 .projects-3 .projects .project:hover .photo {
   opacity: 40;
   filter: alpha(opacity=4000);
