@@ -10,8 +10,9 @@ block content
     .uihack
       #container-left
         h2 about me
-        //a(href="https://www.linkedin.com/people/invite?from=profile&key=213279118", target="_blank")
-        //  img(src="images/jessica.jpg", style="float:left; margin-right:15px; margin-bottom: 10px;", width='100px')
+        //
+          a(href="https://www.linkedin.com/people/invite?from=profile&key=213279118", target="_blank")
+            img(src="images/jessica.jpg", style="float:left; margin-right:15px; margin-bottom: 10px;", width='100px')
         h3.short-bio
         div#test(style="width=250px;text-align:center;")
           | Jessica is a junior studying computer science at Cornell. 
@@ -67,7 +68,7 @@ block content
           .projects
             .project-wrapper
                 .project
-                    .photo-wrapper(data-toggle="tooltip", title="Dissect cow eyes and talk about physics. I probably would've done this for free.")
+                    .photo-wrapper(data-toggle="tooltip", title="Dissect cow eyes and talk about physics. Probably would've done this for free.")
                         a.photo(href="http://www.exploratorium.edu/", target="_blank")
                           img(src="/images/exploratorium.jpg", alt="")
                           .overlay
@@ -81,7 +82,7 @@ block content
                         | Summer 2012 (HS)
             .project-wrapper
                 .project
-                    .photo-wrapper(data-toggle="tooltip", title="Partcipate in five hour grading sessions and help out current CS 3110 students.")
+                    .photo-wrapper(data-toggle="tooltip", title="Partcipate in five hour grading sessions. Help out current CS 3110 students.")
                         a.photo(href="http://www.cs.cornell.edu/Courses/cs3110/2014fa/course_info.php", target="_blank")
                           img(src="/images/cornell-logo.jpg", alt="")
                           .overlay
@@ -171,34 +172,36 @@ block content
                   a(href="mailto: jessicashu127@gmail.com", target="_blank")
                     i.fa.fa-envelope(title="Email")
                 li
-                  a(href='./images/_resume.pdf', target="_blank")
-                    i.fa.fa-file-text(title="Resume")
+                  a(href='https://github.com/swelly127', target="_blank")
+                    i.fa.fa-github(title="Github")
               a
                 img#contact_picture(src="/images/hypnotoad.gif")
           #contact_right
-            h2 leave a message
-            - if (success)
-              .success
-                p Thanks! I'll be in touch shortly.
-                iframe(width="280", height="210", src="https://media.giphy.com/media/13ayyyRnHJKrug/giphy.gif", frameborder="0")
-            - else
-              #contact_form
-                form(name="contact", method='post', action='/')
-                  fieldset
-                    input.text-input#name(placeholder="Name", type="text", name="name", value=name)
-                    -if (name == "")
-                      label.error#name_error(for="name") &nbsp; *Invalid Name
-                    br
-                    input.text-input#email(placeholder="Email", type="text", name="email", value=email)
-                    -if (email_sym == -1)
-                      label.error#email_error(for="email") &nbsp; *Invalid Email
-                    br
-                    - if (msg == "")
-                      textarea.text-input#message(placeholder="Message", type="text", rows="6", name="message")
-                      label.error#name_error(for="name") *Empty Message
-                    - else if (!msg)
-                      textarea.text-input#message(placeholder="Message", type="text", rows="6", name="message")
-                    - else
-                      textarea.text-input#message(type="text", rows="6", name="message") #{msg}
-                  p
-                    input.button#submit_btn(type="submit", name="submit", value="Submit")
+            h2 download resume
+            img(href="./images/_resume.pdf", style="margin-right:15px; margin-bottom: 10px;", width='200px')
+            //
+              - if (success)
+                .success
+                  p Thanks! I'll be in touch shortly.
+                  iframe(width="280", height="210", src="https://media.giphy.com/media/13ayyyRnHJKrug/giphy.gif", frameborder="0")
+              - else
+                #contact_form
+                  form(name="contact", method='post', action='/')
+                    fieldset
+                      input.text-input#name(placeholder="Name", type="text", name="name", value=name)
+                      -if (name == "")
+                        label.error#name_error(for="name") &nbsp; *Invalid Name
+                      br
+                      input.text-input#email(placeholder="Email", type="text", name="email", value=email)
+                      -if (email_sym == -1)
+                        label.error#email_error(for="email") &nbsp; *Invalid Email
+                      br
+                      - if (msg == "")
+                        textarea.text-input#message(placeholder="Message", type="text", rows="6", name="message")
+                        label.error#name_error(for="name") *Empty Message
+                      - else if (!msg)
+                        textarea.text-input#message(placeholder="Message", type="text", rows="6", name="message")
+                      - else
+                        textarea.text-input#message(type="text", rows="6", name="message") #{msg}
+                    p
+                      input.button#submit_btn(type="submit", name="submit", value="Submit")
