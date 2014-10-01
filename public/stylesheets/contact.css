@@ -82,6 +82,7 @@ background-repeat: no-repeat;
 #social li {
     display: inline;
     list-style-type: none;
+    margin:10px;
 }
 #social li a {
   color: grey;
