@@ -91,52 +91,53 @@ block content
                         | Software Engineer
                       .interval
                         | Summer 2013
-          .projects
-            .project-wrapper
-                .project
-                    .photo-wrapper(data-toggle="tooltip", title="")
-                        a.photo(href="http://www.exploratorium.edu/", target="_blank")
-                          img(src="/images/exploratorium.jpg", alt="")
-                          .overlay
-                            p.fui-eye
-                              | Dissect cow eyes and talk about physics. Probably would've done this for free.
-                    .info
-                      .name
-                        | Exploratorium
-                      .position
-                        | Tour Guide
-                      .interval
-                        | Summer 2012 (HS)
-            .project-wrapper
-                .project
-                    .photo-wrapper(data-toggle="tooltip", title="")
-                        a.photo(href="http://www.cs.cornell.edu/Courses/cs3110/2014fa/course_info.php", target="_blank")
-                          img(src="/images/cornell-logo.jpg", alt="")
-                          .overlay
-                            p.fui-eye
-                              | Seven hour grading sessions and pizza. Help out current functional programming students.
-                    .info
-                      .name
-                        | Cornell University
-                      .position
-                        | CS 3110 Consultant
-                      .interval
-                        | Fall 2014 (Present)
-            .project-wrapper
-                .project
-                    .photo-wrapper
-                        .photo
-                          img(src="/images/good-life.jpg", alt="")
-                          .overlay
-                            p.fui-eye
-                              | Mop floors, wash dishes, answer questions about where the hummus is.
-                    .info
-                      .name
-                        | Good Life Grocery
-                      .position
-                        | Director of Dishes
-                      .interval
-                        | Summer 2010 (HS)
+          //
+            .projects
+              .project-wrapper
+                  .project
+                      .photo-wrapper(data-toggle="tooltip", title="")
+                          a.photo(href="http://www.exploratorium.edu/", target="_blank")
+                            img(src="/images/exploratorium.jpg", alt="")
+                            .overlay
+                              p.fui-eye
+                                | Dissect cow eyes and talk about physics. Probably would've done this for free.
+                      .info
+                        .name
+                          | Exploratorium
+                        .position
+                          | Tour Guide
+                        .interval
+                          | Summer 2012 (HS)
+              .project-wrapper
+                  .project
+                      .photo-wrapper(data-toggle="tooltip", title="")
+                          a.photo(href="http://www.cs.cornell.edu/Courses/cs3110/2014fa/course_info.php", target="_blank")
+                            img(src="/images/cornell-logo.jpg", alt="")
+                            .overlay
+                              p.fui-eye
+                                | Seven hour grading sessions and pizza. Help out current functional programming students.
+                      .info
+                        .name
+                          | Cornell University
+                        .position
+                          | CS 3110 Consultant
+                        .interval
+                          | Fall 2014 (Present)
+              .project-wrapper
+                  .project
+                      .photo-wrapper
+                          .photo
+                            img(src="/images/good-life.jpg", alt="")
+                            .overlay
+                              p.fui-eye
+                                | Mop floors, wash dishes, answer questions about where the hummus is.
+                      .info
+                        .name
+                          | Good Life Grocery
+                        .position
+                          | Director of Dishes
+                        .interval
+                          | Summer 2010 (HS)
         h2 personal projects
         .projects-3
           .projects
@@ -147,7 +148,7 @@ block content
                         img(src="/images/seba.jpg", alt="")
                         .overlay
                           p.fui-eye
-                            | Simple site for Cornell's Science and Engineering Business Association
+                            | Simple site for Cornell's Science and Engineering Business Association.
                   .info
                     .name
                       | Cornell SEBA
@@ -160,7 +161,9 @@ block content
                         img(src="/images/shrubfund-logo.jpg", alt="")
                         .overlay
                           p.fui-eye
-                            | Built with Pat Jameson in Flask and Postgres to help college students invest freely. Shut down by venmo :(
+                            | Built with Flask, Postgres and
+                            b Pat Jameson
+                            | to help college students invest freely. Shut down by venmo :(
                   .info
                     .name
                       | ShrubFund
@@ -214,7 +217,7 @@ block content
                           img(src="/images/vitalsource.jpg", alt="")
                           .overlay
                             p.fui-eye
-                              | Downloads textbooks from VitalSource bookshelf, a company that tries to prevent students from saving or accessing textbooks offline.
+                              | Downloads textbooks from VitalSource bookshelf. Saved hundreds on textbooks.
                     .info
                       .name
                         | VitalSource DL
