@@ -155,7 +155,7 @@ footer {
   border-style: solid;
 }
 
-img {
+img, video {
   width: auto\9;
   height: auto;
   max-width: 100%;
@@ -339,6 +339,10 @@ section * {
   color: white;
 }
 
+.video-background {
+  margin-top: -20px;
+}
+
 .projects-3 .projects .info {
   text-align: center;
   font-size: 16px;
@@ -364,6 +368,13 @@ section * {
 }
 
 .projects-3 .projects .project:hover .photo img {
+  opacity: 20;
+  filter: alpha(opacity=2000);
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+
+.projects-3 .projects .project:hover .photo video {
   opacity: 20;
   filter: alpha(opacity=2000);
   opacity: 0.2;
