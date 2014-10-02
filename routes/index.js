@@ -21,6 +21,10 @@ exports.wind = function(req, res){
   res.render('wind');
 };
 
+exports.poker = function(req, res){
+  res.render('poker');
+}
+
 exports.chrome = function(req, res){
   res.render('chrome');
 };

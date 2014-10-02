@@ -1,5 +1,5 @@
 body {
-	background-color: #322222;
+	background-image: url("http://masasushiandgrill.com/upload/image/RJ20090325_MasaSushi_004.jpg");
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
@@ -16,11 +16,13 @@ body {
 }
 
 #container .uihack #container-left {
-	padding: 50px;
+	padding: 100px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 	background-color: white;
 	overflow: visible;
-	margin-left: -300px;
-	width: 500px;
+	margin-left: -450px;
+	width: 750px;
 	float: center;
 }
 

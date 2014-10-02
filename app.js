@@ -35,6 +35,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/wind', routes.wind)
+app.get('/poker', routes.poker)
 app.get('/chrome', routes.chrome)
 app.get('/resume', routes.resume)
 app.post('/', routes.addmsg);

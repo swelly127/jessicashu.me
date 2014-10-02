@@ -10,28 +10,49 @@ block content
     .uihack
       #container-left
         h2 about me
-        a(href="https://www.linkedin.com/people/invite?from=profile&key=213279118", target="_blank")
-          img(src="images/jessica.jpg", style="float:left; margin-right:15px; margin-bottom: 10px;", width='100px')
+        //
+          a(href="https://www.linkedin.com/people/invite?from=profile&key=213279118", target="_blank")
+            img(src="images/jessica.jpg", style="float:left; margin-right:15px; margin-bottom: 10px;", width='100px')
         h3.short-bio
-        div#test(style="width=250px;")
-          | Jessica is a 19 year old college junior studying computer science and entrepreneurship
-          | at Cornell. She plans to join a startup after graduation
-          | and is currently seeking internship offers for Summer 2015.
-          | In her spare time, she likes to browse reddit and eat sushi.
         br
-        | Feel free to reach out for any reason.
-        br
+        div#test(style="width:600px;margin:auto;text-align:center; font-size: 25px; line-height:22px;")
+          | Jessica is a junior computer science science student from SF. 
+          | She plans to join a startup after graduation, despite lacking any
+          | design skills whatsoever. In her spare time, 
+          | she likes to browse reddit and eat sushi. 
+          br
+          br
+          ul#social
+            li
+              a(href="https://twitter.com/swelly127", target="_blank")
+                i.fa.fa-twitter(title="Twitter")
+            li
+              a(href="https://facebook.com/swelly127", target="_blank")
+                i.fa.fa-facebook(title="Facebook")
+            li
+              a(href="https://www.linkedin.com/people/invite?from=profile&key=213279118", target="_blank")
+                i.fa.fa-linkedin(title="LinkedIn")
+            li
+              a(href="mailto: jessicashu127@gmail.com", target="_blank")
+                i.fa.fa-envelope(title="Email")
+            li
+              a(href='https://github.com/swelly127', target="_blank")
+                i.fa.fa-github(title="Github")
+            li
+              a(href="./images/_resume.pdf", target="_blank")
+                i.fa.fa-briefcase(title="Resume")
         br
         h2 work experience
         .projects-3
           .projects
             .project-wrapper
                 .project
-                  .photo-wrapper(data-toggle="tooltip", title="A startup I've been working on for the past two years with a team of Cornell students.<br><br> API + Front End + Business Development")
+                  .photo-wrapper(data-toggle="tooltip", title="")
                       a.photo(href="http://www.yorango.com/", target="_blank")
                         img(src="/images/yorango-logo.png", alt="")
                         .overlay
-                          span.fui-eye
+                          p.fui-eye
+                            | A startup I've been working on for the past two years with a team of Cornell students.
                   .info
                     .name
                       | Yorango
@@ -41,73 +62,78 @@ block content
                       | Feb 2013 - Present
             .project-wrapper
                 .project
-                  .photo-wrapper(data-toggle="tooltip", title="Incredible company with smart and motivated people. Extended internship two weeks.<br><br> API + Data Science")
+                  .photo-wrapper(data-toggle="tooltip", title="")
                       a.photo(href="http://www.edmodo.com/", target="_blank")
                         img(src="/images/edmodo-logo.png", alt="")
                         .overlay
-                          span.fui-eye
+                          p.fui-eye
+                            | Incredible company with smart and motivated people. Extended internship two weeks.
                   .info
                     .name
                       | Edmodo
                     .position
-                      | Software Engineer Intern
+                      | Software Engineer
                     .interval
                       | Summer 2014
             .project-wrapper
                 .project
-                    .photo-wrapper(data-toggle="tooltip", title="Learned more about software development this summer than first year of college.<br><br> API + Web Caching")
+                    .photo-wrapper(data-toggle="tooltip")
                         a.photo(href="http://www.uversity.com/", target="_blank")
                           img(src="/images/uversity-logo.png", alt="")
                           .overlay
-                            span.fui-eye
+                            p.fui-eye
+                              | Learned more about software development this summer than first year of college.
                     .info
                       .name
                         | Uversity
                       .position
-                        | Software Engineer Intern
+                        | Software Engineer
                       .interval
                         | Summer 2013
           .projects
             .project-wrapper
                 .project
-                    .photo-wrapper(data-toggle="tooltip", title="Dissect cow eyes and talk about physics. I probably would've done this for free.<br><br> Science Experiments + Chat with Tourists")
+                    .photo-wrapper(data-toggle="tooltip", title="")
                         a.photo(href="http://www.exploratorium.edu/", target="_blank")
                           img(src="/images/exploratorium.jpg", alt="")
                           .overlay
-                            span.fui-eye
+                            p.fui-eye
+                              | Dissect cow eyes and talk about physics. Probably would've done this for free.
                     .info
                       .name
                         | Exploratorium
                       .position
-                        | Explainer
+                        | Tour Guide
                       .interval
                         | Summer 2012 (HS)
             .project-wrapper
                 .project
-                    .photo-wrapper(data-toggle="tooltip", title="Got to eat pizza and help out current CS 3110 students.<br><br> Grade + Teach OCaml")
+                    .photo-wrapper(data-toggle="tooltip", title="")
                         a.photo(href="http://www.cs.cornell.edu/Courses/cs3110/2014fa/course_info.php", target="_blank")
                           img(src="/images/cornell-logo.jpg", alt="")
                           .overlay
-                            span.fui-eye
+                            p.fui-eye
+                              | Partcipate in five hour grading sessions. Help out current CS 3110 students.
                     .info
                       .name
                         | Cornell University
                       .position
-                        | CS 3110 Course Consultant
+                        | CS 3110 Consultant
                       .interval
                         | Fall 2014 (Present)
             .project-wrapper
                 .project
-                    .photo-wrapper(data-toggle="tooltip", title="Worked 6am shifts here full time when I was 15. I highly value the experience. <br><br> Actual Labor")
+                    .photo-wrapper
                         .photo
                           img(src="/images/good-life.jpg", alt="")
                           .overlay
-                            span.fui-eye
+                            p.fui-eye
+                              | Mop floors, wash dishes, answer questions about where the hummus is.
                     .info
                       .name
                         | Good Life Grocery
                       .position
-                        | Director of Dishes and Floor Mopping
+                        | Director of Dishes
                       .interval
                         | Summer 2010 (HS)
         h2 personal projects
@@ -115,11 +141,25 @@ block content
           .projects
             .project-wrapper
                 .project
-                  .photo-wrapper(data-toggle="tooltip", title="Currently disabled by Venmo due to high transaction volume. Needs funding to continue operating.")
+                  .photo-wrapper(data-toggle="tooltip", title="")
+                      a.photo(href="http://swelly127.github.io/", target="_blank")
+                        img(src="/images/seba.jpg", alt="")
+                        .overlay
+                          p.fui-eye
+                            | Website for Cornell's Science and Engineering Business Association
+                  .info
+                    .name
+                      | Cornell SEBA
+                    .interval
+                      | June 2010
+            .project-wrapper
+                .project
+                  .photo-wrapper(data-toggle="tooltip", title="")
                       a.photo(href="http://www.shrubfund.co/", target="_blank")
                         img(src="/images/shrubfund-logo.jpg", alt="")
                         .overlay
-                          span.fui-eye
+                          p.fui-eye
+                            | Currently disabled by Venmo due to high transaction volume. Needs funding to continue operating.
                   .info
                     .name
                       | ShrubFund
@@ -127,81 +167,36 @@ block content
                       | July 2014 @ YC Hacks
             .project-wrapper
                 .project
-                  .photo-wrapper(data-toggle="tooltip", title="Built completely from scratch. Generates enough energy to power a radio.")
-                      a.photo()
-                        img(src="/images/wind-turbine.jpg", alt="")
-                        .overlay
-                          span.fui-eye
-                  .info
-                    .name
-                      | Wind Turbine
-                    .interval
-                      | June 2010
-            .project-wrapper
-                .project
-                    .photo-wrapper(data-toggle="tooltip", title="Chrome extension that organizes your downloads. Releasing on Chrome Web Store shortly.")
-                        a.photo()
-                          img(src="/images/mudkip-logo.png", alt="")
+                    .photo-wrapper(data-toggle="tooltip", title="")
+                        a.photo(href="http://www.pokerbot.co/", target="_blank")
+                          img(src="/images/poker-logo.png", alt="")
                           .overlay
-                            span.fui-eye
+                            p.fui-eye
+                              | Artificial intelligence project. Plays Texas Hold'em against you. Work in progress.
                     .info
                       .name
-                        | Chrome Download Organizer
+                        | PokerBot
                       .interval
-                        | Febuary 2014
-        h2 contact me
-        #contact_box(style="display: block;")
-          #contact_left
-            h2 reach me directly
-            .contact_info
-              p.direct
-                i.fa.fa-phone
-                |415.490.7810
-              p.direct
-                i.fa.fa-skype
-                |swelly127
-              ul#social
-                li
-                  a(href="https://twitter.com/swelly127", target="_blank")
-                    i.fa.fa-twitter(title="Twitter")
-                li
-                  a(href="https://facebook.com/swelly127", target="_blank")
-                    i.fa.fa-facebook(title="Facebook")
-                li
-                  a(href="https://www.linkedin.com/people/invite?from=profile&key=213279118", target="_blank")
-                    i.fa.fa-linkedin(title="LinkedIn")
-                li
-                  a(href="mailto: jessicashu127@gmail.com", target="_blank")
-                    i.fa.fa-envelope(title="Email")
-                li
-                  a(href='./images/_resume.pdf', target="_blank")
-                    i.fa.fa-file-text(title="Resume")
-              a
-                img#contact_picture(src="/images/hypnotoad.gif")
-          #contact_right
-            h2 leave a message
-            - if (success)
-              .success
-                p Thanks! I'll be in touch shortly.
-                iframe(width="280", height="210", src="https://media.giphy.com/media/13ayyyRnHJKrug/giphy.gif", frameborder="0")
-            - else
-              #contact_form
-                form(name="contact", method='post', action='/')
-                  fieldset
-                    input.text-input#name(placeholder="Name", type="text", name="name", value=name)
-                    -if (name == "")
-                      label.error#name_error(for="name") &nbsp; *Invalid Name
-                    br
-                    input.text-input#email(placeholder="Email", type="text", name="email", value=email)
-                    -if (email_sym == -1)
-                      label.error#email_error(for="email") &nbsp; *Invalid Email
-                    br
-                    - if (msg == "")
-                      textarea.text-input#message(placeholder="Message", type="text", rows="6", name="message")
-                      label.error#name_error(for="name") *Empty Message
-                    - else if (!msg)
-                      textarea.text-input#message(placeholder="Message", type="text", rows="6", name="message")
-                    - else
-                      textarea.text-input#message(type="text", rows="6", name="message") #{msg}
-                  p
-                    input.button#submit_btn(type="submit", name="submit", value="Submit")
+                        | September 2014
+        //
+          h2 contact me
+          #contact_form
+            form(name="contact", method='post', action='/')
+              fieldset
+                input.text-input#name(placeholder="Name", type="text", name="name", value=name)
+                -if (name == "")
+                  label.error#name_error(for="name") &nbsp; *Invalid Name
+                br
+                input.text-input#email(placeholder="Email", type="text", name="email", value=email)
+                -if (email_sym == -1)
+                  label.error#email_error(for="email") &nbsp; *Invalid Email
+                br
+                - if (msg == "")
+                  textarea.text-input#message(placeholder="Message", type="text", rows="6", name="message")
+                  label.error#name_error(for="name") *Empty Message
+                - else if (!msg)
+                  textarea.text-input#message(placeholder="Message", type="text", rows="6", name="message")
+                - else
+                  textarea.text-input#message(type="text", rows="6", name="message") #{msg}
+              p
+                input.button#submit_btn(type="submit", name="submit", value="Submit")
