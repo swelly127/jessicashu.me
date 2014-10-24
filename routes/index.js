@@ -17,18 +17,6 @@ exports.resume = function(req, res){
   });
 };
 
-exports.wind = function(req, res){
-  res.render('wind');
-};
-
-exports.poker = function(req, res){
-  res.render('poker');
-}
-
-exports.chrome = function(req, res){
-  res.render('chrome');
-};
-
 exports.addmsg = function(req, res){
   sendgrid.send({
     to:       "jessicashu127@gmail.com",
