@@ -1,9 +1,11 @@
 extends layout
 
 block css
+  title(style="text-align:center") Jessica Shu
   link(rel='stylesheet', href='/stylesheets/index.css')
   link(rel='stylesheet', href='/stylesheets/contact.css')
   link(rel='stylesheet', href='/stylesheets/projects.css')
+  link(rel="shortcut icon" href='/images/home-icon.png')
   script(src="/javascripts/index.js", type="application/javascript")
 block content
   #container
@@ -16,10 +18,9 @@ block content
         h3.short-bio
         br
         div#test(style="width:600px;margin:auto;text-align:center; font-size: 25px; line-height:22px;")
-          | Jessica is a junior computer science science student from SF.
-          | She plans to join a startup after graduation, despite lacking any
-          | design skills whatsoever. In her spare time,
-          | she likes to browse reddit and eat sushi.
+          | Jessica hula hooped for 45 minutes straight one time in middle school and
+          | likes to watch <a href="http://www.adultswim.com/videos/rick-and-morty/pilot/"> Rick and Morty </a>
+          | also she is great at coding.
           br
           br
           ul#social
@@ -52,7 +53,7 @@ block content
                         img(src="/images/yorango-logo.png", alt="")
                         .overlay
                           p.fui-eye
-                            | A startup I've been working on for the past two years with a team of Cornell students. Stack of Django, Knockout, and Mysql.
+                            | A startup I've been working on for the past two years built on stack of Django Knockout & Mysql.
                   .info
                     .name
                       | Yorango
@@ -67,7 +68,7 @@ block content
                         img(src="/images/edmodo-logo.png", alt="")
                         .overlay
                           p.fui-eye
-                            | Built & wrote documentation for new API endpoints and worked on data visualizations with public relations. Extended internship two weeks.
+                            | Built & wrote documentation for new API endpoints and worked on data visualizations. Extended internship two weeks.
                   .info
                     .name
                       | Edmodo
@@ -91,53 +92,52 @@ block content
                         | Software Engineer
                       .interval
                         | Summer 2013
-          //
-            .projects
-              .project-wrapper
-                  .project
-                      .photo-wrapper(data-toggle="tooltip", title="")
-                          a.photo(href="http://www.exploratorium.edu/", target="_blank")
-                            img(src="/images/exploratorium.jpg", alt="")
-                            .overlay
-                              p.fui-eye
-                                | Dissect cow eyes and talk about physics. Probably would've done this for free.
-                      .info
-                        .name
-                          | Exploratorium
-                        .position
-                          | Tour Guide
-                        .interval
-                          | Summer 2012 (HS)
-              .project-wrapper
-                  .project
-                      .photo-wrapper(data-toggle="tooltip", title="")
-                          a.photo(href="http://www.cs.cornell.edu/Courses/cs3110/2014fa/course_info.php", target="_blank")
-                            img(src="/images/cornell-logo.jpg", alt="")
-                            .overlay
-                              p.fui-eye
-                                | Seven hour grading sessions and pizza. Help out current functional programming students.
-                      .info
-                        .name
-                          | Cornell University
-                        .position
-                          | CS 3110 Consultant
-                        .interval
-                          | Fall 2014 (Present)
-              .project-wrapper
-                  .project
-                      .photo-wrapper
-                          .photo
-                            img(src="/images/good-life.jpg", alt="")
-                            .overlay
-                              p.fui-eye
-                                | Mop floors, wash dishes, answer questions about where the hummus is.
-                      .info
-                        .name
-                          | Good Life Grocery
-                        .position
-                          | Director of Dishes
-                        .interval
-                          | Summer 2010 (HS)
+          .projects
+            .project-wrapper
+                .project
+                    .photo-wrapper(data-toggle="tooltip", title="")
+                        a.photo(href="http://www.exploratorium.edu/", target="_blank")
+                          img(src="/images/exploratorium.jpg", alt="")
+                          .overlay
+                            p.fui-eye
+                              | Dissect cow eyes talk about physics hang out in a cool museum for money.
+                    .info
+                      .name
+                        | Exploratorium
+                      .position
+                        | Tour Guide
+                      .interval
+                        | Summer 2012 (HS)
+            .project-wrapper
+                .project
+                    .photo-wrapper(data-toggle="tooltip", title="")
+                        a.photo(href="http://www.cs.cornell.edu/Courses/cs3110/2014fa/course_info.php", target="_blank")
+                          img(src="/images/cornell-logo.jpg", alt="")
+                          .overlay
+                            p.fui-eye
+                              | Grade code and eat pizza teach kids functional programming in ocaml.
+                    .info
+                      .name
+                        | Cornell University
+                      .position
+                        | CS 3110 Consultant
+                      .interval
+                        | Fall 2014 (Present)
+            .project-wrapper
+                .project
+                    .photo-wrapper
+                        .photo
+                          img(src="/images/good-life.jpg", alt="")
+                          .overlay
+                            p.fui-eye
+                              | Mop floors and wash dishes and tell people about where the hummus is.
+                    .info
+                      .name
+                        | Good Life Grocery
+                      .position
+                        | Director of Dishes
+                      .interval
+                        | Summer 2010 (HS)
         h2 personal projects
         .projects-3
           .projects
@@ -157,13 +157,13 @@ block content
             .project-wrapper
                 .project
                     .photo-wrapper(data-toggle="tooltip", title="")
-                        a.photo(href="https://weebly-junior.herokuapp.com", target="_blank")
+                        a.photo(href="https://weebly-junior.com", target="_blank")
                           img(src="/images/weebly.png", alt="")
                           .overlay
                             p.fui-eye
-                              | Interactive website with Rest API. Designed by weebly. Work in Progress.
+                              | Interactive website with Rest API. Designed by weebly. Almost finished!
                     .info
-                      .name
+                      .name(href="https://github.com/swelly127/weebly-jr", title="source code here")
                         | Weebly Junior
                       .interval
                         | October 2014
@@ -174,8 +174,7 @@ block content
                         img(src="/images/shrubfund-logo.jpg", alt="")
                         .overlay
                           p.fui-eye
-                            | Built with Flask, Postgres and
-                            b Pat Jameson
+                            | Built with Flask, Postgres and <b> Pat Jameson </b>
                             | to help college students invest freely. Shut down by venmo :(
                   .info
                     .name

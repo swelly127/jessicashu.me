@@ -7,6 +7,7 @@ body {
 	overflow: auto;
 	width: 100%;
 }
+
 #container {
 	overflow: hidden;
 }
@@ -16,12 +17,12 @@ body {
 }
 
 #container .uihack #container-left {
-	padding: 100px;
+	padding: 50px;
 	margin-top: 50px;
 	margin-bottom: 50px;
 	background-color: white;
 	overflow: visible;
-	margin-left: -450px;
+	margin-left: -425px;
 	width: 750px;
 	float: center;
 }
