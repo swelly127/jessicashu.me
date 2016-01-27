@@ -1,0 +1,130 @@
+.ref {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-style: oblique;
+  font-weight: 400;
+}
+.hack {
+  margin-top: 15px;
+  margin-left: 50%;
+}
+#resume {
+  text-align: center;
+  overflow: auto;
+  width: 880px;
+  margin-left: -440px;
+  float: center;
+  border: 3px solid;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+strong.skill-cat {
+	font-style: oblique;
+	font-size: 16px;
+}
+
+ul.awards {
+	margin-left: 5px;
+}
+
+ul.awards li {
+	font-weight: 300;
+	font-size: 17px;
+	color: Black;
+}
+
+ul.awards li div {
+	font-size: 15px;
+	color: maroon;
+}
+
+#res_header {
+  font-family: Courier;
+  text-align: center;
+}
+.info {
+  margin-top: -12px;
+  margin-bottom: 10px;
+  font-family: Courier;
+}
+.download {
+  display: none;
+  margin-left: -440px;
+  margin-bottom: 20px;
+}
+
+.download a {
+  display: inline-block;
+  padding: 10px;
+  color: white;
+  background-color: grey;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.download a:hover {
+  background: blue;
+}
+.download i {
+  margin-right: 10px;
+}
+#resume h2 {
+	color: maroon;
+}
+#resume h3 {
+  font-weight: 300;
+}
+#resume h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+}
+#resume h5 {
+  margin: 3px 0px 0px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 300;
+}
+#resume p strong {
+  color: @accent;
+  font-weight: 400;
+}
+#resume #resume-left {
+  overflow: auto;
+  margin-left: 10px;
+  float: left;
+  margin-right: 20px;
+  width: 420px;
+}
+#resume #resume-right {
+  overflow: auto;
+  float: left;
+  width: 420px;
+}
+.sub {
+  border: 1px dotted;
+  border-radius: 10px;
+}
+#work_exp {
+  background-color: rgb(200,200,255);
+  margin-bottom: 15px;
+}
+
+#skills {
+  background-color: rgb(255,255,200);
+}
+#edu {
+  background-color: rgb(255,200,200);
+  margin-bottom: 15px;
+}
+#prize {
+  background-color: rgb(200,255,200);
+}
+
+ul li {
+  list-style-type: none;
+}

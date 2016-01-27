@@ -1,0 +1,42 @@
+body {
+	background-image: url("http://masasushiandgrill.com/upload/image/RJ20090325_MasaSushi_004.jpg");
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+.container{
+	overflow: auto;
+	width: 100%;
+}
+
+#container {
+	overflow: hidden;
+}
+.uihack{
+	overflow: visible;
+	margin-left: 50%;
+}
+
+#container .uihack #container-left {
+	padding: 50px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background-color: white;
+	overflow: visible;
+	margin-left: -425px;
+	width: 750px;
+	float: center;
+}
+
+.tooltip {
+	color:red;
+}
+
+.tooltip-arrow {
+	color:blue;
+}
+
+.tooltip-inner {
+	font-size: 13px;
+}
+
+
